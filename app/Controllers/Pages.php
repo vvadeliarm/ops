@@ -63,4 +63,10 @@ class Pages extends BaseController
         // return view('welcome_message');
         return view('pages/TTD kepala.html');
     }
+
+    public function perbaikiSKM()
+    {
+        // return view('welcome_message');
+        return view('pages/perbaikiSKM.html');
+    }
 }
