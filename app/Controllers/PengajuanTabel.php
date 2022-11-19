@@ -16,6 +16,10 @@ class PengajuanTabel extends BaseController
     public function index()
     {
         $pengajuan = $this->pengajuanModel->findAll();
-        dd($pengajuan);
+
+        $data = [
+            'pengajuan' => $pengajuan
+        ];
+        return view('pages/layananSKM', $data);
     }
 }
