@@ -1,0 +1,48 @@
+body {
+  min-height: 1000px;
+}
+.jumbotron {
+  padding-top: 1rem;
+  background-color: #2e279d;
+}
+h1 {
+  color: white;
+}
+h4 {
+  color: whitesmoke;
+}
+
+.jumbotron p {
+  color: white;
+}
+
+#projects {
+  background-color: #2e279d;
+}
+#projects h2 {
+  color: whitesmoke;
+}
+
+.login{
+  width: 360px;
+  height: min-content;
+  padding: 20px;
+  border-radius: 5px;
+  background: #ffffff;
+}
+
+.login h1{
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: black;
+}
+
+.login form{
+  font-size: 20px;
+}
+
+
+.login form input[type="submit"]{
+  font-size: 20px;
+  margin-top: 15px;
+}
