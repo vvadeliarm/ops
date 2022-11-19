@@ -16,6 +16,9 @@ class MahasiswaTabel extends BaseController
     public function index()
     {
         $mahasiswa = $this->mahasiswaModel->findAll();
-        dd($mahasiswa);
+        $data = [
+            'mahasiswa' => $mahasiswa
+        ];
+        return view('pages/pengajuanSKM', $data);
     }
 }

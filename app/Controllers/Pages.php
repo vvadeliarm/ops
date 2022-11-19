@@ -37,7 +37,7 @@ class Pages extends BaseController
     public function pengajuanSKM()
     {
         // return view('welcome_message');
-        return view('pages/pengajuanSKM.html');
+        return view('pages/pengajuanSKM');
     }
 
     public function profil()

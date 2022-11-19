@@ -15,7 +15,11 @@ class PengajuanTabel extends BaseController
 
     public function index()
     {
-        $pengajuan = $this->pengajuanModel->findAll();
+        $nim = 12345;
+        // $pengajuan = $this->pengajuanModel->findAll();
+        $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
+        // dd($pengajuan);
+        // var_dump($pengajuan);
 
         $data = [
             'pengajuan' => $pengajuan

@@ -89,7 +89,7 @@
 
                                 </tr>
                             <?php endforeach; ?>
-                            <tr>
+                            <!-- <tr>
                                 <td scope="row">SKM0002</td>
                                 <td>07 November 2021</td>
                                 <td>Ditolak</td>
@@ -106,7 +106,7 @@
                                 <td>23 Januari 2023</td>
                                 <td>Diajukan</td>
                                 <td></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
