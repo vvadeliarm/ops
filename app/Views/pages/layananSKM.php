@@ -81,12 +81,12 @@
                                         <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></td>
                                     <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                         <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></td>
-                                        <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
-                                            <td><a href="/pages/perbaikiSKM"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ditangguhkanModal">Perbaiki</button></a></td>
-                                            <?php } else { ?>
-                                                <td></td>
-                                                <?php } ?>
-                                    
+                                    <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
+                                        <td><a href="/pages/perbaikiSKM"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ditangguhkanModal">Perbaiki</button></a></td>
+                                    <?php } else { ?>
+                                        <td></td>
+                                    <?php } ?>
+
                                 </tr>
                             <?php endforeach; ?>
                             <tr>
@@ -113,6 +113,43 @@
             </div>
     </section>
     <!-- Akhir tabel -->
+
+    <div class="modal fade" id="ditolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="idDokumen" class="form-label">Dokumen</label>
+                            <input class="form-control" type="text" placeholder="SKM<?= sprintf("%03d", $p['idpengajuan']); ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
+                            <input class="form-control" type="text" placeholder="<?= $p['nama']; ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="kategori" class="form-label">Kategori</label>
+                            <input class="form-control" type="text" placeholder="<?= $p['kategori']; ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Tujuan" class="form-label">Tujuan</label>
+                            <input class="form-control" type="text" placeholder="<?= $p['tujuan']; ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="alasan" class="form-label">Alasan</label>
+                            <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $p['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
     <!--FOOTER-->
     <footer>
