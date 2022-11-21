@@ -80,7 +80,7 @@
                                     if ($p['statusskm'] == "Disetujui") { ?>
                                         <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></td>
                                     <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
-                                        <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></td>
+                                        <td><a href="/pages/layananSKM/<?= $p['idpengajuan']; ?>"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></a></td>
                                     <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
                                         <td><a href="/pages/perbaikiSKM"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ditangguhkanModal">Perbaiki</button></a></td>
                                     <?php } else { ?>

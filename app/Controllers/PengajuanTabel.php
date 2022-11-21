@@ -26,4 +26,12 @@ class PengajuanTabel extends BaseController
         ];
         return view('pages/layananSKM', $data);
     }
+
+    public function detail($idpengajuan)
+    {
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail
+        ];
+    }
 }
