@@ -18,11 +18,14 @@ class PengajuanTabel extends BaseController
         $nim = 12345;
         // $pengajuan = $this->pengajuanModel->findAll();
         $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
+        $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
         // dd($pengajuan);
         // var_dump($pengajuan);
 
         $data = [
-            'pengajuan' => $pengajuan
+            'pengajuan' => $pengajuan,
+            'atributmhs' => $atributmhs
+
         ];
         return view('pages/layananSKM', $data);
     }
