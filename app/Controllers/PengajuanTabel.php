@@ -18,13 +18,14 @@ class PengajuanTabel extends BaseController
         $nim = 12345;
         // $pengajuan = $this->pengajuanModel->findAll();
         $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
-        $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
+        $pengajuanDetail = $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
         // dd($pengajuan);
         // var_dump($pengajuan);
 
         $data = [
             'pengajuan' => $pengajuan,
-            'atributmhs' => $atributmhs
+            'atributmhs' => $atributmhs,
+            'pengajuanDetail' => $pengajuanDetail
 
         ];
         return view('pages/layananSKM', $data);
@@ -32,9 +33,19 @@ class PengajuanTabel extends BaseController
 
     public function detail($idpengajuan)
     {
-        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->findAll();
         $data = [
             'pengajuanDetail' => $pengajuanDetail
         ];
+        return view('pages/layananSKM', $data);
+    }
+
+    public function perbaikiSKM($idpengajuan)
+    {
+        $perbaiki = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'perbaiki' => $perbaiki
+        ];
+        return view('pages/perbaikiSKM', $data);
     }
 }
