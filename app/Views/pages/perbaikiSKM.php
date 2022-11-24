@@ -58,14 +58,14 @@
             <div class="col">
                 <br />
                 <h5>Form Perbaikan SKM</h5>
-                <form class="row g-3">
+                <form form action="/CRUDPengajuan/updatePengajuan/<?= $perbaiki['idpengajuan']; ?>" method="POST" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputNama" class="form-label">Nama</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['nama']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="nama" value="<?= $perbaiki['nama']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-4">
                         <label for="inputState" class="form-label">Kategori</label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" name="kategori">
                             <option>Administrasi Orang tua</option>
                             <option>Administrasi Perlombaan</option>
                             <option>Perpanjangan BPJS</option>
@@ -74,19 +74,19 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputTtl" class="form-label">Tempat Tanggal Lahir</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['tempat tanggal lahir']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="tempat tanggal lahir" value="<?= $perbaiki['tempattanggallahir']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" name="tujuan" rows="3"></textarea>
                     </div>
                     <div class="col-md-3">
                         <label for="inputNIM" class="form-label">NIM</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['nim']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="nim" value="<?= $perbaiki['nim']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputKelas" class="form-label">Kelas</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['kelas']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="kelas" value="<?= $perbaiki['kelas']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="formFile" class="form-label">Unggah file pendukung</label>
@@ -94,25 +94,25 @@
                     </div>
                     <div class="col-md-3">
                         <label for="inputDiploma" class="form-label">Diploma</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['diploma']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="diploma" value="<?= $perbaiki['diploma']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputSems" class="form-label">Semester</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['semester']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="semester" value="<?= $perbaiki['semester']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div></div>
                     <div class="col-md-6">
                         <label for="inputProdi" class="form-label">Program Studi</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['prodi']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="prodi" value="<?= $perbaiki['prodi']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div></div>
                     <div class="col-md-3">
                         <label for="inputTA" class="form-label">Tahun Akademik</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['tahun akademik']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="tahun akademik" value="<?= $perbaiki['tahunakademik']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputStatus" class="form-label">Status</label>
-                        <input class="form-control" type="text" placeholder="<?= $perbaiki['status']; ?>" aria-label="Disabled input example" disabled>
+                        <input class="form-control" type="text" name="status" value="<?= $perbaiki['status']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-7">
                         <div class="form-check">
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <a href="/pengajuanTabel"><button class="btn btn-primary" type="button">Ajukan SKM</button></a>
+                        <button class="btn btn-primary" type="submit">Ajukan SKM</button>
                     </div>
                 </form>
                 <!-- Akhir Form-->

@@ -39,9 +39,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
-$routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::perbaikiSKM/$1');
+$routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
 $routes->get('/pages/pengajuanSKM/(:segment)', 'MahasiswaTabel::pengajuanSKM/$1');
-
+$routes->get('/PerbaikanTabel/(:segment)', 'PerbaikanTabel::perbaikiSKM/$1');
+$routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::updatePengajuan/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

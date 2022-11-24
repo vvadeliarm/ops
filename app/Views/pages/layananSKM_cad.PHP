@@ -195,11 +195,11 @@
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
-                                                <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
+                                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
-                                                <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></a></td>
+                                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></td>
                                             <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
-                                                <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Perbaiki</button></a></td>
+                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ditangguhkanModal">Perbaiki</button></td>
                                             <?php } else { ?>
                                                 <td></td>
                                             <?php } ?>
@@ -245,10 +245,166 @@
     </div>
     <!-- End of Page Wrapper -->
 
+    <!-- Modal Disetujui -->
+    <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="idDokumen" class="form-label">Dokumen</label>
+                            <input class="form-control" type="text" placeholder="id Dokumen" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
+                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formFile" class="form-label">File SKM</label>
+                            <br>
+                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-fw fa-file"></i>
+                                <span>SKM0001_Nama Mahasiswa.pdf</span>
+                                <i class="fas fa-fw fa-eye"></i>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary">Cetak</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ditolak -->
+    <div class="modal fade" id="ditolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <!-- <div class="col-md-12">
+                            <label for="idDokumen" class="form-label">Dokumen</label>
+                            <?php if ($pengajuanDetail != NULL) { ?>
+                                <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['idpengajuan']; ?>" aria-label="Disabled input example" disabled>
+                            <?php }; ?>
+                        </div> -->
+                        <div class="col-md-12">
+                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
+                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="kategori" class="form-label">Kategori</label>
+                            <input class="form-control" type="text" placeholder="Administrasi Orangtua" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Tujuan" class="form-label">Tujuan</label>
+                            <input class="form-control" type="text" placeholder="Persyaratan Taspen" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formFile" class="form-label">Dokumen Pendukung</label>
+                            <br>
+                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-fw fa-file"></i>
+                                <span>SKM0002_Nama Mahasiswa.pdf</span>
+                                <i class="fas fa-fw fa-eye"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="alasan" class="form-label">Alasan</label>
+                            <textarea class="form-control" id="alasan" rows="3" placeholder="Tidak memenuhi persyaratan" aria-label="Disabled input example" disabled></textarea>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ditangguhkan -->
+    <div class="modal fade" id="ditangguhkanModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="idDokumen" class="form-label">Dokumen</label>
+                            <input class="form-control" type="text" placeholder="id Dokumen" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
+                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="kategori" class="form-label">Kategori</label>
+                            <input class="form-control" type="text" placeholder="Administrasi Orangtua" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="Tujuan" class="form-label">Tujuan</label>
+                            <input class="form-control" type="text" placeholder="Persyaratan Taspen" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formFile" class="form-label">Dokumen Pendukung</label>
+                            <br>
+                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fas fa-fw fa-file"></i>
+                                <span>SKM0003_Nama Mahasiswa.pdf</span>
+                                <i class="fas fa-fw fa-eye"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="alasan" class="form-label">Alasan</label>
+                            <textarea class="form-control" id="alasan" rows="3" placeholder="Tidak memenuhi persyaratan" aria-label="Disabled input example" disabled></textarea>
+                        </div>
+                    </form>
+                    <br />
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <?php if ($pengajuanDetail != NULL) { ?>
+                            <a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button class="btn btn-primary" type="button">Perbaiki SKM</button></a>
+                        <?php }; ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="/vendor/jquery/jquery.min.js"></script>

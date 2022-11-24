@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+
 class Pages extends BaseController
 {
     public function index()
@@ -25,6 +26,7 @@ class Pages extends BaseController
     public function layananSKM()
     {
         // return view('welcome_message');
+        session();
         return view('pages/layananSKM.html');
     }
 
@@ -68,5 +70,11 @@ class Pages extends BaseController
     {
         // return view('welcome_message');
         return view('pages/perbaikiSKM.html');
+    }
+
+    public function detail()
+    {
+        // return view('welcome_message');
+        return view('pages/detail');
     }
 }

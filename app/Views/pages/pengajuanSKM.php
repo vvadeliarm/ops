@@ -80,7 +80,7 @@
 
 
                 <h5>Form Pengajuan SKM</h5>
-                <form form action="/simpanPengajuan" method="POST" class="row g-3">
+                <form form action="/CRUDPengajuan/simpanPengajuan" method="POST" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputNama" class="form-label">Nama</label>
                         <input class="form-control" type="text" value="<?= $mhs['nama']; ?>" id="nama" name="nama" aria-label="readreadonly input example" readonly>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputTtl" class="form-label">Tempat Tanggal Lahir</label>
-                        <input class="form-control" type="text" value="<?= $mhs['tempat tanggal lahir']; ?>" id="tempat tanggal lahir" name="tempat tanggal lahir" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="text" value="<?= $mhs['tempattanggallahir']; ?>" id="tempat tanggal lahir" name="tempat tanggal lahir" aria-label="readreadonly input example" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
@@ -130,7 +130,7 @@
                     <div></div>
                     <div class="col-md-3">
                         <label for="inputTA" class="form-label">Tahun Akademik</label>
-                        <input class="form-control" type="text" value="<?= $mhs['tahun akademik']; ?>" name="tahun akademik" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="text" value="<?= $mhs['tahunakademik']; ?>" name="tahun akademik" aria-label="readreadonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputStatus" class="form-label">Status</label>

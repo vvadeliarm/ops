@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Models\PengajuanModel;
+use App\Models\MahasiswaModel;
+// use App\config\Services;
 
 class PengajuanTabel extends BaseController
 {
@@ -11,6 +13,7 @@ class PengajuanTabel extends BaseController
     public function __construct()
     {
         $this->pengajuanModel = new PengajuanModel();
+        $this->mahasiswaModel = new MahasiswaModel();
     }
 
     public function index()
@@ -19,25 +22,27 @@ class PengajuanTabel extends BaseController
         // $pengajuan = $this->pengajuanModel->findAll();
         $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
         $pengajuanDetail = $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
+        $akun = $this->mahasiswaModel->where(['nim' => $nim])->first();
         // dd($pengajuan);
         // var_dump($pengajuan);
 
         $data = [
             'pengajuan' => $pengajuan,
             'atributmhs' => $atributmhs,
-            'pengajuanDetail' => $pengajuanDetail
-
+            'pengajuanDetail' => $pengajuanDetail,
+            'akun' => $akun
         ];
         return view('pages/layananSKM', $data);
     }
 
     public function detail($idpengajuan)
     {
-        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->findAll();
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
         $data = [
             'pengajuanDetail' => $pengajuanDetail
+            // 'validation' => \config\Services::validation()
         ];
-        return view('pages/layananSKM', $data);
+        return view('pages/detail', $data);
     }
 
     public function perbaikiSKM($idpengajuan)

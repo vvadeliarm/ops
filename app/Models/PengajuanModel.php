@@ -13,14 +13,15 @@ class PengajuanModel extends Model
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['nim', 'nama', 'tempat tanggal lahir', 'kelas', 'semester', 'prodi', 'tahun akademik', 'diploma', 'status', 'kategori', 'tujuan'];
+    protected $allowedFields = ['nama', 'nim', 'kelas', 'prodi', 'semester', 'tempat tanggal lahir', 'diploma', 'tahun akademik', 'status', 'kategori', 'tujuan', 'statusskm'];
+    //
 
     #protected $allowedFields = ['name', 'email'];
 
     protected $useTimestamps = true;
-    protected $tanggalpengajuan  = 'created_at';
-    // protected $updatedField  = 'updated_at';
-    // protected $deletedField  = 'deleted_at';
+    protected $createdField = 'tanggalpengajuan';
+    protected $updatedField  = 'tanggalperbaikan';
+    // protected $deletedField  = 'tanggal hapus';
 
     #protected $validationRules    = [];
     #protected $validationMessages = [];
