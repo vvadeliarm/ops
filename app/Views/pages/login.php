@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
 
     <title>PEMBUATAN SKM</title>
   </head>
@@ -30,7 +30,7 @@
             <a class="nav-link" aria-current="page" href="index.html">Beranda</a>
             <a class="nav-link" href="#">Tentang Kami</a>
             <a class="nav-link" href="#">Layanan</a>
-            <a class="nav-link active" href="login.html">Masuk</a>
+            <a class="nav-link active" href="/pages/login">Masuk</a>
           </div>
         </div>
       </div>
