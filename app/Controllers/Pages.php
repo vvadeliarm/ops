@@ -63,7 +63,7 @@ class Pages extends BaseController
     public function TTDKepala()
     {
         // return view('welcome_message');
-        return view('pages/TTD kepala.html');
+        return view('pages/TTDKepala.html');
     }
 
     public function perbaikiSKM()
