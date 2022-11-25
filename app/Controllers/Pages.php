@@ -14,13 +14,13 @@ class Pages extends BaseController
     public function HomeAdminStaff()
     {
         // return view('welcome_message');
-        return view('pages/HomeAdminStaff.html');
+        return view('pages/HomeAdminStaff');
     }
 
     public function HomeKepala()
     {
         // return view('welcome_message');
-        return view('pages/HomeKepala.html');
+        return view('pages/HomeKepala');
     }
 
     public function layananSKM()
@@ -42,28 +42,22 @@ class Pages extends BaseController
         return view('pages/pengajuanSKM');
     }
 
-    public function profil()
-    {
-        // return view('welcome_message');
-        return view('pages/profil.html');
-    }
-
     public function SkmAdminStaff()
     {
         // return view('welcome_message');
-        return view('pages/SkmAdminStaff.html');
+        return view('pages/SkmAdminStaff');
     }
 
     public function SkmKepala()
     {
         // return view('welcome_message');
-        return view('pages/SkmKepala.html');
+        return view('pages/SkmKepala');
     }
 
     public function TTDKepala()
     {
         // return view('welcome_message');
-        return view('pages/TTDKepala.html');
+        return view('pages/TTDKepala');
     }
 
     public function perbaikiSKM()

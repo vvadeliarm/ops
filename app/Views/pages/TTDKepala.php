@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="/css/sb-admin-2.min.css" rel="stylesheet">
@@ -31,7 +29,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="bi bi-person-gear"></i>
                 </div>
@@ -43,30 +41,28 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="HomeKepala.html">
+                <a class="nav-link" href="HomeKepala">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="SkmAdminStaff.html">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Layanan SKM</span></a
-                >
+                <a class="nav-link" href="SkmAdminStaff">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Layanan SKM</span></a>
             </li>
 
             <!-- Nav Item - Dashboard Input Data Kepala -->
             <li class="nav-item">
-                <a class="nav-link" href="TTD kepala.html">
-                <i class="fas fa-fw fa-file-alt"></i>
-                <span>Tanda Tangan & Data</span></a
-                >
+                <a class="nav-link" href="TTDKepala">
+                    <i class="fas fa-fw fa-file-alt"></i>
+                    <span>Tanda Tangan & Data</span></a>
             </li>
-           
+
         </ul>
         <!-- End of Sidebar -->
-        
+
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column" style="background-color: #151965">
@@ -101,18 +97,14 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -125,15 +117,13 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="alertsDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -174,31 +164,28 @@
                             </div>
                         </li>
 
-                       
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle"
-                                    src="/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a> -->
                                 <div class="dropdown-item">
-                                  <p>222011691</p>
-                                  <p>3SD2</p>
+                                    <p>222011691</p>
+                                    <p>3SD2</p>
                                 </div>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
-                                
+
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -212,7 +199,7 @@
                 </nav>
                 <!-- End of Topbar -->
 
-                
+
                 <!-- Begin Page Content -->
                 <!-- Awal form -->
                 <section id="formKepala">
@@ -227,8 +214,8 @@
                             <div class="col-md-6">
                                 <form>
                                     <div class="mb-3">
-                                      <label for="nama-kepala">Nama</label>
-                                      <input type="text" class="form-control" id="nama-kepala" placeholder="Nama beserta jabatan">
+                                        <label for="nama-kepala">Nama</label>
+                                        <input type="text" class="form-control" id="nama-kepala" placeholder="Nama beserta jabatan">
                                     </div>
                                     <div class="mb-3">
                                         <label for="ttd">Input File Tanda Tangan</label>
@@ -241,35 +228,37 @@
                                     <div class="mb-3">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
-                                  </form>
-                                  <p>Form ini diperlukan ketika terjadi perubahan kepala BAAK sehingga memerlukan data diri serta tanda tangan dan cap yang baru (disesuaikan)</p>
+                                </form>
+                                <p>Form ini diperlukan ketika terjadi perubahan kepala BAAK sehingga memerlukan data diri serta tanda tangan dan cap yang baru (disesuaikan)</p>
                             </div>
                         </div>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2e279d" fill-opacity="1" d="M0,224L40,202.7C80,181,160,139,240,133.3C320,128,400,160,480,154.7C560,149,640,107,720,90.7C800,75,880,85,960,101.3C1040,117,1120,139,1200,138.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                        <path fill="#2e279d" fill-opacity="1" d="M0,224L40,202.7C80,181,160,139,240,133.3C320,128,400,160,480,154.7C560,149,640,107,720,90.7C800,75,880,85,960,101.3C1040,117,1120,139,1200,138.7C1280,139,1360,117,1400,106.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+                    </svg>
                 </section>
-                
+
                 <!-- Akhir form -->
-                
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; OPS BAAK 2022</span>
-          </div>
-        </div>
-      </footer>
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; OPS BAAK 2022</span>
+                        </div>
+                    </div>
+                </footer>
 
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- Bootstrap core JavaScript-->
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <!-- Core plugin JavaScript-->
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
+                <!-- Custom scripts for all pages-->
+                <script src="/js/sb-admin-2.min.js"></script>
 
 </body>
 
