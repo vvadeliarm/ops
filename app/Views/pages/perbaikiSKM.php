@@ -58,7 +58,7 @@
             <div class="col">
                 <br />
                 <h5>Form Perbaikan SKM</h5>
-                <form form action="/CRUDPengajuan/updatePengajuan/<?= $perbaiki['idpengajuan']; ?>" method="POST" class="row g-3">
+                <form form action="/CRUDPengajuan/updatePengajuan/<?= $perbaiki['idpengajuan']; ?>" enctype="multipart/form-data" method="POST" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputNama" class="form-label">Nama</label>
                         <input class="form-control" type="text" name="nama" value="<?= $perbaiki['nama']; ?>" aria-label="readonly input example" readonly>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputTtl" class="form-label">Tempat Tanggal Lahir</label>
-                        <input class="form-control" type="text" name="tempat tanggal lahir" value="<?= $perbaiki['tempattanggallahir']; ?>" aria-label="readonly input example" readonly>
+                        <input class="form-control" type="text" name="tempattanggallahir" value="<?= $perbaiki['tempattanggallahir']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
@@ -89,8 +89,8 @@
                         <input class="form-control" type="text" name="kelas" value="<?= $perbaiki['kelas']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-6">
-                        <label for="formFile" class="form-label">Unggah file pendukung</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <label for="formFile" class="form-label" name="file">Unggah file pendukung</label>
+                        <input class="form-control" type="file" name="file" id="formFile">
                     </div>
                     <div class="col-md-3">
                         <label for="inputDiploma" class="form-label">Diploma</label>
@@ -108,7 +108,7 @@
                     <div></div>
                     <div class="col-md-3">
                         <label for="inputTA" class="form-label">Tahun Akademik</label>
-                        <input class="form-control" type="text" name="tahun akademik" value="<?= $perbaiki['tahunakademik']; ?>" aria-label="readonly input example" readonly>
+                        <input class="form-control" type="text" name="tahunakademik" value="<?= $perbaiki['tahunakademik']; ?>" aria-label="readonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputStatus" class="form-label">Status</label>

@@ -30,17 +30,19 @@ class PengajuanTabel extends BaseController
             'pengajuan' => $pengajuan,
             'atributmhs' => $atributmhs,
             'pengajuanDetail' => $pengajuanDetail,
-            'akun' => $akun
+            'akun' => $akun,
+            'validation' => NULL
         ];
         return view('pages/layananSKM', $data);
     }
 
     public function detail($idpengajuan)
     {
+        session();
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
         $data = [
-            'pengajuanDetail' => $pengajuanDetail
-            // 'validation' => \config\Services::validation()
+            'pengajuanDetail' => $pengajuanDetail,
+            'validation' => \config\Services::validation()
         ];
         return view('pages/detail', $data);
     }
@@ -52,5 +54,14 @@ class PengajuanTabel extends BaseController
             'perbaiki' => $perbaiki
         ];
         return view('pages/perbaikiSKM', $data);
+    }
+
+    public function previewpdf($idpengajuan)
+    {
+        $preview = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'preview' => $preview
+        ];
+        return view('pages/previewpdf', $data);
     }
 }
