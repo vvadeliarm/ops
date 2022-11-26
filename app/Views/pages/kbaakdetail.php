@@ -152,7 +152,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                    <h5 class="modal-title">Detail SKM</h5>
+                    <h5 class="modal-title">Proses SKM</h5>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
                 </div>
                 <div class="modal-body">
@@ -182,23 +182,70 @@
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
                         </div>
-                        <div class="col-md-12">
-                            <label for="alasan" class="form-label">Alasan</label>
-                            <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $pengajuanDetail['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
-                        </div>
                     </form>
                     <br />
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tolakModal" data-dismiss="modal">Tolak</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#terimaModal" data-dismiss="modal">Terima</button>
+                    </div>
+                    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <?php if ($pengajuanDetail != NULL) { ?>
                             <a href="/PerbaikanTabel/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">Perbaiki SKM</button></a>
                         <?php }; ?>
 
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal DiTerima-->
+    <div class="modal fade" id="terimaModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">TERIMA SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body" style=" color: black; ">
+                    Apakah Anda yakin menerima SKM?
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Terima</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal DiTolak-->
+    <div class="modal fade" id="tolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">PENOLAKAN SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body" style=" color: black; ">
+
+                    <div class="form-group">
+                        Alasan :
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Tolak</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
