@@ -141,7 +141,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="form-check">
-                            <input class="form-check-input" name="value" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" name="cek" type="checkbox" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Formulir ini saya isi dengan sebenar-benarnya sesuai dengan data yang ada
                             </label>
