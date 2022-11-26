@@ -7,7 +7,11 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "codeigniter4/framework": "^4.0",
+<<<<<<< HEAD
         "dompdf/dompdf": "^2.0"
+=======
+        "myth/auth": "^1.2"
+>>>>>>> 638d0638ca39a3704698ef9aad734ed6339f911c
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
