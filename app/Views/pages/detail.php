@@ -69,7 +69,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
                     <h5 class="modal-title">Detail SKM</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
                 </div>
                 <div class="modal-body">
                     <form class="row g-3">
@@ -84,11 +84,16 @@
                         <div class="col-md-12">
                             <label for="formFile" class="form-label">File SKM</label>
                             <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0001_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
+                            <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
+                                <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
+                            <?php } else { ?>
+                                <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
+                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                    <i class="fas fa-fw fa-file"></i>
+                                    <span><?= $pengajuanDetail['namafile']; ?></span>
+                                    <i class="fas fa-fw fa-eye"></i>
+                                </a>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>
@@ -106,7 +111,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
                     <h5 class="modal-title">Detail SKM</h5>
-                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button">X</button></a>
+                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
                     <!-- <a class="nav-link" href="/PengajuanTabel"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">X</button></a> -->
                 </div>
                 <div class="modal-body">
@@ -130,11 +135,16 @@
                         <div class="col-md-12">
                             <label for="formFile" class="form-label">Dokumen Pendukung</label>
                             <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0002_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
+                            <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
+                                <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
+                            <?php } else { ?>
+                                <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
+                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                    <i class="fas fa-fw fa-file"></i>
+                                    <span><?= $pengajuanDetail['namafile']; ?></span>
+                                    <i class="fas fa-fw fa-eye"></i>
+                                </a>
+                            <?php } ?>
                         </div>
                         <div class="col-md-12">
                             <label for="alasan" class="form-label">Alasan</label>
@@ -153,7 +163,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
                     <h5 class="modal-title">Detail SKM</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
                 </div>
                 <div class="modal-body">
                     <form class="row g-3">
@@ -176,11 +186,15 @@
                         <div class="col-md-12">
                             <label for="formFile" class="form-label">Dokumen Pendukung</label>
                             <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0003_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
+                            <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
+                                <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
+                            <?php } else { ?>
+                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                    <i class="fas fa-fw fa-file"></i>
+                                    <span><?= $pengajuanDetail['namafile']; ?></span>
+                                    <i class="fas fa-fw fa-eye"></i>
+                                </a>
+                            <?php } ?>
                         </div>
                         <div class="col-md-12">
                             <label for="alasan" class="form-label">Alasan</label>

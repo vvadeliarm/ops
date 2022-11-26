@@ -13,7 +13,7 @@ class PengajuanModel extends Model
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
-    protected $allowedFields = ['nama', 'nim', 'kelas', 'prodi', 'semester', 'tempat tanggal lahir', 'diploma', 'tahun akademik', 'status', 'kategori', 'tujuan', 'statusskm'];
+    protected $allowedFields = ['nama', 'nim', 'kelas', 'prodi', 'semester', 'tempattanggallahir', 'diploma', 'tahunakademik', 'status', 'kategori', 'tujuan', 'statusskm', 'fileupload', 'namafile'];
     //
 
     #protected $allowedFields = ['name', 'email'];

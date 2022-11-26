@@ -43,6 +43,8 @@
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col">
+                    <div id="notifications">
+                    </div>
                     <h1>Pengajuan SKM</h1>
                     <p>Surat Keterangan Mahasiswa (SKM) merupakan salah satu jenis layanan kemahasiswaan yang dapat diakses mahasiswa yang bertujuan untuk legalitas dokumen dan kegiatan sesuai administrasi Politeknik Statistika STIS</p>
                 </div>
@@ -80,7 +82,7 @@
 
 
                 <h5>Form Pengajuan SKM</h5>
-                <form form action="/CRUDPengajuan/simpanPengajuan" method="POST" class="row g-3">
+                <form form action="/CRUDPengajuan/simpanPengajuan" method="POST" enctype="multipart/form-data" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputNama" class="form-label">Nama</label>
                         <input class="form-control" type="text" value="<?= $mhs['nama']; ?>" id="nama" name="nama" aria-label="readreadonly input example" readonly>
@@ -96,7 +98,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputTtl" class="form-label">Tempat Tanggal Lahir</label>
-                        <input class="form-control" type="text" value="<?= $mhs['tempattanggallahir']; ?>" id="tempat tanggal lahir" name="tempat tanggal lahir" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="text" value="<?= $mhs['tempattanggallahir']; ?>" id="tempattanggallahir" name="tempattanggallahir" aria-label="readreadonly input example" readonly>
                     </div>
                     <div class="col-md-6">
                         <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
@@ -130,7 +132,7 @@
                     <div></div>
                     <div class="col-md-3">
                         <label for="inputTA" class="form-label">Tahun Akademik</label>
-                        <input class="form-control" type="text" value="<?= $mhs['tahunakademik']; ?>" name="tahun akademik" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="text" value="<?= $mhs['tahunakademik']; ?>" name="tahunakademik" aria-label="readreadonly input example" readonly>
                     </div>
                     <div class="col-md-3">
                         <label for="inputStatus" class="form-label">Status</label>
@@ -138,7 +140,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" name="value" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Formulir ini saya isi dengan sebenar-benarnya sesuai dengan data yang ada
                             </label>
@@ -157,6 +159,9 @@
                     </div>
                 </footer>
                 <!-- Akhir Footer-->
+                <script>
+                    $('#notifications').slideDown('slow').delay(3000).slideUp('slow');
+                </script>
 
                 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
