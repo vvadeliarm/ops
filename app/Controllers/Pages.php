@@ -8,7 +8,7 @@ class Pages extends BaseController
     public function index()
     {
         // return view('welcome_message');
-        return view('pages/index.html');
+        return view('pages/index');
     }
 
     public function HomeAdminStaff()
@@ -33,7 +33,7 @@ class Pages extends BaseController
     public function login()
     {
         // return view('welcome_message');
-        return view('pages/login.html');
+        return view('pages/login');
     }
 
     public function pengajuanSKM()
@@ -70,5 +70,11 @@ class Pages extends BaseController
     {
         // return view('welcome_message');
         return view('pages/detail');
+    }
+
+    public function kbaakdetail()
+    {
+        // return view('welcome_message');
+        return view('pages/kbaakdetail');
     }
 }

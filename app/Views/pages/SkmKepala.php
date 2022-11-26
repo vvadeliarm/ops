@@ -160,7 +160,9 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <p><?= $kbaak['nama']; ?></p>
+                                </span>
                                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -170,13 +172,12 @@
                                     Profile
                                 </a> -->
                                 <div class="dropdown-item">
-                                    <p>222011691</p>
-                                    <p>3SD2</p>
+                                    <p><?= $kbaak['nip']; ?></p>
                                 </div>
-                                <a class="dropdown-item" href="#">
+                                <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
-                                </a>
+                                </a> -->
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -238,8 +239,27 @@
                                 </thead>
 
                                 <tbody>
-                                    <tr>
-                                        <td scope="row">SKM0001</td>
+
+                                    <?php foreach ($pengajuan as $p) : ?>
+                                        <tr>
+                                            <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
+                                            <td><?= $p['tanggalpengajuan']; ?></td>
+                                            <td><?= $p['nama']; ?></td>
+                                            <td><?= $p['statusskm']; ?></td>
+                                            <?php
+                                            if ($p['statusskm'] == "Disetujui") { ?>
+                                                <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
+                                            <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
+                                                <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
+                                            <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
+                                                <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
+                                            <?php } else { ?>
+                                                <td></td>
+                                            <?php } ?>
+                                        </tr>
+                                    <?php endforeach; ?>
+
+                                    <!-- <td scope="row">SKM0001</td>
                                         <td>12 Januari 2020</td>
                                         <td>Ahmad Subagyo</td>
                                         <td>Disetujui</td>
@@ -279,7 +299,7 @@
                                         <td>Ahmad Subagyo</td>
                                         <td>Menunggu</td>
                                         <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#prosesModal">Proses</button></td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
