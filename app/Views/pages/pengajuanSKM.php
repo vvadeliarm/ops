@@ -113,6 +113,7 @@
                         <input class="form-control" type="text" value="<?= $mhs['kelas']; ?>" name="kelas" aria-label="readreadonly input example" readonly>
                     </div>
                     <div class="col-md-6">
+
                         <label for="formFile" class="form-label">Unggah file pendukung</label>
                         <input class="form-control" type="file" id="formFile" name="file">
                     </div>
@@ -140,7 +141,7 @@
                     </div>
                     <div class="col-md-7">
                         <div class="form-check">
-                            <input class="form-check-input" name="value" type="checkbox" value="" id="flexCheckDefault">
+                            <input class="form-check-input" name="cek" type="checkbox" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Formulir ini saya isi dengan sebenar-benarnya sesuai dengan data yang ada
                             </label>

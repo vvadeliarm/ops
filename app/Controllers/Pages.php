@@ -81,4 +81,15 @@ class Pages extends BaseController
         // return view('welcome_message');
         return view('pages/kbaakdetail');
     }
+    public function notifikasiPengajuan()
+    {
+        // return view('welcome_message');
+        return view('pages/notifikasiPengajuan');
+    }
+
+    public function previewpdf()
+    {
+        // return view('welcome_message');
+        return view('pages/previewpdf');
+    }
 }

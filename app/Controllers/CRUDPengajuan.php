@@ -35,6 +35,30 @@ class CRUDPengajuan extends BaseController
         //     return redirect()->to('pages/notifikasiPengajuan');
         // }
 
+        // if ($this->request->getVar('value') != 'required') {
+        //     session()->setFlashdata(
+        //         'msg',
+        //         '<div class="alert alert-danger">
+        //                     <h2  style="text-align: center;">OOPS!!!</h2>
+        //                     <p  style="text-align: center;">KAMU BELUM MENCETANG AGREEMENT</p>
+        //                     <p  style="text-align: center;">SILAHKAN CENTANG TERLEBIH DAHULU</p>
+        //                 </div>'
+        //     );
+        //     return redirect()->to('pages/notifikasiPengajuan');
+        // }
+
+        // if ($this->request->getVar('tujuan') != 'required') {
+        //     session()->setFlashdata(
+        //         'msg',
+        //         '<div class="alert alert-danger">
+        //                     <h2  style="text-align: center;">OOPS!!!</h2>
+        //                     <p  style="text-align: center;">TIDAK ADA TUJUAN YANG DIMASUKKAN</p>
+        //                     <p  style="text-align: center;">MASUKKAN TUJUAN TERLEBIH DAHULU</p>
+        //                 </div>'
+        //     );
+        //     return redirect()->to('pages/notifikasiPengajuan');
+        // }
+
         if (!$this->validate([
             'tujuan' => 'required'
         ])) {
@@ -51,6 +75,38 @@ class CRUDPengajuan extends BaseController
 
 
         $kategori = $this->request->getVar('kategori');
+        // if ($kategori != "Perpanjangan BPJS") {
+        //     if ($this->request->getVar('file') != 'required') {
+        //         session()->setFlashdata(
+        //             'msg',
+        //             '<div class="alert alert-danger">
+        //                 <h2  style="text-align: center;">OOPS!!!</h2>
+        //                 <p  style="text-align: center;">ANDA BELUM MENGUPLOAD FILE</p>
+        //                 <p  style="text-align: center;">SILAHKAN UPLOAD FILE PENDUKUNG TERLEBIH DAHULU</p>
+        //             </div>'
+        //         );
+        //         return redirect()->to('pages/notifikasiPengajuan');
+        //     } elseif ($this->request->getVar('file') != 'max_size[file, 300]') {
+        //         session()->setFlashdata(
+        //             'msg',
+        //             '<div class="alert alert-danger">
+        //                 <h2  style="text-align: center;">OOPS!!!</h2>
+        //                 <p  style="text-align: center;">UKURAN FILE TIDAK BOLEH DARI 300kb</p>
+        //             </div>'
+        //         );
+        //         return redirect()->to('pages/notifikasiPengajuan');
+        //     } elseif ($this->request->getVar('file') != 'ext_in[file,pdf]') {
+        //         session()->setFlashdata(
+        //             'msg',
+        //             '<div class="alert alert-danger">
+        //                 <h2  style="text-align: center;">OOPS!!!</h2>
+        //                 <p  style="text-align: center;">FILE HARUS PDF</p>
+        //             </div>'
+        //         );
+        //         return redirect()->to('pages/notifikasiPengajuan');
+        //     }
+        // }
+
         if ($kategori != "Perpanjangan BPJS") {
             if (!$this->validate([
                 'file' => 'uploaded[file]'

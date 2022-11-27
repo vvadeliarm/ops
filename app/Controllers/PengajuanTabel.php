@@ -18,7 +18,9 @@ class PengajuanTabel extends BaseController
 
     public function index()
     {
-        $nim = 12345;
+        $session = session();
+        // echo "Welcome back, ".$session->get('nama');
+        $nim = $session->get('nim');
         // $pengajuan = $this->pengajuanModel->findAll();
         $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
         $pengajuanDetail = $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
@@ -39,6 +41,8 @@ class PengajuanTabel extends BaseController
     public function detail($idpengajuan)
     {
         session();
+        // $session = session();
+        // $nim = $session->get('nim');
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
         $data = [
             'pengajuanDetail' => $pengajuanDetail,

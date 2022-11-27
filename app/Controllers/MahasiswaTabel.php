@@ -15,7 +15,8 @@ class MahasiswaTabel extends BaseController
 
     public function index()
     {
-        $nim = 12345;
+        $session = session();
+        $nim = $session->get('nim');
         $mahasiswa = $this->mahasiswaModel->findAll();
         $mhs = $this->mahasiswaModel->where(['nim' => $nim])->first();
         $data = [

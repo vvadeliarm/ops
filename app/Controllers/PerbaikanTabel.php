@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PengajuanModel;
-use App\Models\MahasiswaModel;
+// use App\Models\MahasiswaModel;
 // use App\config\Services;
 
 class PerbaikanTabel extends BaseController
