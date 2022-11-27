@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\MahasiswaModel;
+use App\Models\KepalaBaakModel;
 
 class login extends BaseController
 {
@@ -14,36 +15,59 @@ class login extends BaseController
     }
 
     protected $mahasiswaModel;
+    protected $kepalaBaakModel;
     public function __construct()
     {
         $this->mahasiswaModel = new MahasiswaModel();
+        $this->kepalaBaakModel = new kepalaBaakModel();
     }
 
     public function auth()
     {
         $session = session();
-        $model = new MahasiswaModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
+        //auth mahasiswa
+        $model = new MahasiswaModel();
         // $data = $model->findAll();
-        $data = $model->where('email', $email)->first();
+        $data = $this->mahasiswaModel->where(['email' => $email])->first();
         // // dd($email);
         // dd($password);
         // dd($data);
 
+        //auth kepala baak
+        $model2 = new KepalaBaakModel();
+        $data2 = $this->kepalaBaakModel->where(['email' => $email])->first();
+
         if ($data) {
             $pass = $data['password'];
             $email_ = $data['email'];
-            if (($password == $pass)&&($email_ == $email)){
+            if (($password == $pass) && ($email_ == $email)) {
                 $ses_data = [
-                                'nim'       => $data['nim'],
-                                // 'nama'     => $data['nama'],
-                                'email'    => $data['email'],
-                                'logged_in'     => TRUE
-                            ];
-                            $session->set($ses_data);
-                            return redirect()->to('/PengajuanTabel');
-
+                    'nim'       => $data['nim'],
+                    // 'nama'     => $data['nama'],
+                    'email'    => $data['email'],
+                    'logged_in'     => TRUE
+                ];
+                $session->set($ses_data);
+                return redirect()->to('/PengajuanTabel');
+            } else {
+                // echo 'salah';
+                $session->setFlashdata('msg', 'Password Salah atau Email Salah');
+                return redirect()->to('/pages/login');
+            }
+        } elseif ($data2) {
+            $pass = $data2['password'];
+            $email_ = $data2['email'];
+            if (($password == $pass) && ($email_ == $email)) {
+                $ses_data = [
+                    'nip'       => $data2['nip'],
+                    // 'nama'     => $data['nama'],
+                    'email'    => $data2['email'],
+                    'logged_in'     => TRUE
+                ];
+                $session->set($ses_data);
+                return redirect()->to('/HomeKepalaBaakTabel');
             } else {
                 // echo 'salah';
                 $session->setFlashdata('msg', 'Password Salah atau Email Salah');
@@ -53,8 +77,9 @@ class login extends BaseController
             $session->setFlashdata('msg', 'Password Salah atau Email Salah');
             return redirect()->to('/pages/login');
         }
-        
-        
+
+
+
         // if ($data) {
         //     $pass = $data['password'];
         //     $verify_pass = password_verify($password, $pass);

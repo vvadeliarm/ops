@@ -17,7 +17,8 @@ class HomeKepalaBaakTabel extends BaseController
 
     public function index()
     {
-        $nip = 123456789;
+        $session = session();
+        $nip = $session->get('nip');
         $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
         $pengajuan = $this->pengajuanModel->findAll();
         // dd($kbaak);
