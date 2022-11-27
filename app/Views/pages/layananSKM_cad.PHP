@@ -20,7 +20,7 @@
 
 <body id="page-top">
     <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column" style="background-color: white">
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: #151965">
         <!-- Main Content -->
         <div id="content">
             <!-- Topbar -->
@@ -29,18 +29,6 @@
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
                 </button>
-
-                <!-- Topbar Search -->
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                    <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
 
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -111,6 +99,7 @@
                         </div>
                     </li>
 
+
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -123,10 +112,10 @@
                                 <p><?= $akun['nim']; ?></p>
                                 <p><?= $akun['kelas']; ?></p>
                             </div>
-                            <a class="dropdown-item" href="#">
+                            <!-- <a class="dropdown-item" href="#">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Settings
-                            </a>
+                            </a> -->
 
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -139,73 +128,78 @@
             </nav>
             <!-- End of Topbar -->
 
+            <!-- Slider -->
             <section>
-                <!-- Slider -->
-                <section class="jumbotron text-center">
-                    <div class="container">
-                        <div class="row text-center mb-5">
-                            <div class="col">
-                                <h1>Layanan SKM</h1>
-                                <p>Surat Keterangan Mahasiswa (SKM) merupakan salah satu jenis layanan kemahasiswaan yang dapat diakses mahasiswa yang bertujuan untuk legalitas dokumen dan kegiatan sesuai administrasi Politeknik Statistika STIS</p>
-                            </div>
-                            <svg id="tentang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 10">
-                                <path fill="#ffff" fill-opacity="1"></path>
-                            </svg>
-                </section>
-                <!-- Akhir Slider-->
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h1 style="color: white ; text-align: center;"> LAYANAN SKM</h1>
+                        <p style="color: white; text-align: center;">
+                            Surat Keterangan Mahasiswa (SKM) merupakan salah satu jenis layanan kemahasiswaan yang dapat diakses mahasiswa yang bertujuan untuk legalitas dokumen dan kegiatan sesuai administrasi Politeknik Statistika STIS
+                        </p>
+                        <svg id="tentang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 10">
+                            <path fill="#ffff" fill-opacity="1"></path>
+                        </svg>
+                    </div>
+                </div>
 
+            </section>
 
+            <!-- Akhir Slider-->
+            <section>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="/MahasiswaTabel?/<?= $akun['nim']; ?>"><button class="btn btn-primary" type="button">+ Ajukan SKM</button></a>
                 </div>
-                </br></br>
-                <div class="container">
-                    <div class="row text-center mb-5">
-                        <div class="col">
+            </section>
 
-                            <h5>Daftar SKM Saya</h5>
-                            <?php if (session()->getFlashdata("pesan")) : ?>
-                                <div class="alert alert-success" role="alert">
-                                    <?= session()->getFlashdata("pesan") ?>
-                                </div>
-                            <?php endif; ?>
-                            <table class="table table-striped">
-                                <thead>
+            <div class="container" style="background-color:white; color: black ;">
+                <div class="row text-center mb-5">
+                    <div class="col">
+                        <h3>Daftar SKM </h3>
+                        <?php if (session()->getFlashdata("pesan")) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?= session()->getFlashdata("pesan") ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <table class="table table-striped" style="color: black ;">
+
+
+                            <thead>
+                                <tr>
+                                    <th scope="col">Dokumen</th>
+                                    <th scope="col">Tanggal dibuat</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Detail</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td colspan="4">
+                                        <?php if ($pengajuan == NULL) { ?>
+                                            Belum Ada Pengajuan
+                                        <?php }; ?>
+                                    </td>
+                                </tr>
+
+                                <?php foreach ($pengajuan as $p) : ?>
                                     <tr>
-                                        <th scope="col">Dokumen</th>
-                                        <th scope="col">Tanggal dibuat</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Detail</th>
+                                        <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
+                                        <td><?= $p['tanggalpengajuan']; ?></td>
+                                        <td><?= $p['statusskm']; ?></td>
+                                        <?php
+                                        if ($p['statusskm'] == "Disetujui") { ?>
+                                            <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
+                                        <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
+                                            <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></a></td>
+                                        <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
+                                            <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Perbaiki</button></a></td>
+                                        <?php } else { ?>
+                                            <td></td>
+                                        <?php } ?>
                                     </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td colspan="4">
-                                            <?php if ($pengajuan == NULL) { ?>
-                                                Belum Ada Pengajuan
-                                            <?php }; ?>
-                                        </td>
-                                    </tr>
-
-                                    <?php foreach ($pengajuan as $p) : ?>
-                                        <tr>
-                                            <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
-                                            <td><?= $p['tanggalpengajuan']; ?></td>
-                                            <td><?= $p['statusskm']; ?></td>
-                                            <?php
-                                            if ($p['statusskm'] == "Disetujui") { ?>
-                                                <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></td>
-                                            <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
-                                                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></td>
-                                            <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
-                                                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ditangguhkanModal">Perbaiki</button></td>
-                                            <?php } else { ?>
-                                                <td></td>
-                                            <?php } ?>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                    <!-- <tr>
+                                <?php endforeach; ?>
+                                <!-- <tr>
                                         <td scope="row">SKM0002</td>
                                         <td>07 November 2021</td>
                                         <td>Ditolak</td>
@@ -224,10 +218,11 @@
                                         <td></td>
                                     </tr> -->
 
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+            </div>
             </section>
             <!-- Akhir tabel -->
 
@@ -244,143 +239,6 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Modal Disetujui -->
-    <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                    <h5 class="modal-title">Detail SKM</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3">
-                        <div class="col-md-12">
-                            <label for="idDokumen" class="form-label">Dokumen</label>
-                            <input class="form-control" type="text" placeholder="id Dokumen" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
-                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="formFile" class="form-label">File SKM</label>
-                            <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0001_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="button" class="btn btn-primary">Cetak</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Ditolak -->
-    <div class="modal fade" id="ditolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                    <h5 class="modal-title">Detail SKM</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3">
-                        <!-- <div class="col-md-12">
-                            <label for="idDokumen" class="form-label">Dokumen</label>
-                            <?php if ($pengajuanDetail != NULL) { ?>
-                                <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['idpengajuan']; ?>" aria-label="Disabled input example" disabled>
-                            <?php }; ?>
-                        </div> -->
-                        <div class="col-md-12">
-                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
-                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="kategori" class="form-label">Kategori</label>
-                            <input class="form-control" type="text" placeholder="Administrasi Orangtua" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="Tujuan" class="form-label">Tujuan</label>
-                            <input class="form-control" type="text" placeholder="Persyaratan Taspen" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="formFile" class="form-label">Dokumen Pendukung</label>
-                            <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0002_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="alasan" class="form-label">Alasan</label>
-                            <textarea class="form-control" id="alasan" rows="3" placeholder="Tidak memenuhi persyaratan" aria-label="Disabled input example" disabled></textarea>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Ditangguhkan -->
-    <div class="modal fade" id="ditangguhkanModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                    <h5 class="modal-title">Detail SKM</h5>
-                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3">
-                        <div class="col-md-12">
-                            <label for="idDokumen" class="form-label">Dokumen</label>
-                            <input class="form-control" type="text" placeholder="id Dokumen" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
-                            <input class="form-control" type="text" placeholder="Nama Mahasiswa" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="kategori" class="form-label">Kategori</label>
-                            <input class="form-control" type="text" placeholder="Administrasi Orangtua" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="Tujuan" class="form-label">Tujuan</label>
-                            <input class="form-control" type="text" placeholder="Persyaratan Taspen" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="formFile" class="form-label">Dokumen Pendukung</label>
-                            <br>
-                            <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span>SKM0003_Nama Mahasiswa.pdf</span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="alasan" class="form-label">Alasan</label>
-                            <textarea class="form-control" id="alasan" rows="3" placeholder="Tidak memenuhi persyaratan" aria-label="Disabled input example" disabled></textarea>
-                        </div>
-                    </form>
-                    <br />
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <?php if ($pengajuanDetail != NULL) { ?>
-                            <a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button class="btn btn-primary" type="button">Perbaiki SKM</button></a>
-                        <?php }; ?>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -400,7 +258,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/pages/login">Logout</a>
                 </div>
             </div>
         </div>
