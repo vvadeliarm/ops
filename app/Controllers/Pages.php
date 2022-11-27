@@ -46,15 +46,6 @@ class Pages extends BaseController
         return view('pages/pengajuanSKM');
     }
 
-<<<<<<< HEAD
-=======
-    public function profil()
-    {
-        // return view('welcome_message');
-        return view('pages/profil');
-    }
-
->>>>>>> db69a8bfdf5fb7e189cb3941c09703e9262b7ffa
     public function SkmAdminStaff()
     {
         // return view('welcome_message');
@@ -85,22 +76,9 @@ class Pages extends BaseController
         return view('pages/detail');
     }
 
-<<<<<<< HEAD
     public function kbaakdetail()
     {
         // return view('welcome_message');
         return view('pages/kbaakdetail');
-=======
-    public function notifikasiPengajuan()
-    {
-        // return view('welcome_message');
-        return view('pages/notifikasiPengajuan');
-    }
-
-    public function previewpdf()
-    {
-        // return view('welcome_message');
-        return view('pages/previewpdf');
->>>>>>> db69a8bfdf5fb7e189cb3941c09703e9262b7ffa
     }
 }

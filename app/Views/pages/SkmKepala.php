@@ -33,7 +33,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="bi bi-person-gear"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ADMIN BAAK </div>
+                <div class="sidebar-brand-text mx-3">Kepala BAAK </div>
             </a>
 
             <!-- Divider -->
@@ -41,17 +41,19 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="HomeKepala">
+                <a class="nav-link" href="/HomeKepalaBaakTabel">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="SkmKepala">
+                <a class="nav-link" href="/KepalaBaakTabel">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Layanan SKM</span></a>
             </li>
+
+
 
 
 
@@ -329,7 +331,7 @@
             <i class="fas fa-angle-up"></i>
         </a>
 
-        <!-- Modal Disetujui -->
+        <!-- Modal Disetujui
         <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -367,7 +369,7 @@
             </div>
         </div>
 
-        <!-- Modal Ditolak -->
+        Modal Ditolak
         <div class="modal fade" id="ditolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -413,7 +415,7 @@
             </div>
         </div>
 
-        <!-- Modal DiProses -->
+        Modal DiProses
         <div class="modal fade" id="prosesModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -460,7 +462,7 @@
         </div>
 
 
-        <!-- Modal DiTerima-->
+        Modal DiTerima
         <div class="modal fade" id="terimaModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -482,7 +484,7 @@
             </div>
         </div>
 
-        <!-- Modal DiTolak-->
+        Modal DiTolak
         <div class="modal fade" id="tolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -506,7 +508,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
 

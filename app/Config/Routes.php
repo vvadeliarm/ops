@@ -41,6 +41,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
+$routes->get('/TolakKbaakTabel/(:segment)', 'TolakKbaakTabel::detail/$1');
+$routes->get('/TerimaKbaakTabel/(:segment)', 'TerimaKbaakTabel::detail/$1');
 $routes->get('/pages/pengajuanSKM/(:segment)', 'MahasiswaTabel::pengajuanSKM/$1');
 $routes->get('/PerbaikanTabel/(:segment)', 'PerbaikanTabel::perbaikiSKM/$1');
 $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::updatePengajuan/$1');
