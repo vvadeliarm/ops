@@ -36,17 +36,19 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="HomeKepala">
+        <a class="nav-link" href="/HomeKepalaBaakTabel">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
       </li>
 
       <!-- Nav Item - Dashboard SKM -->
       <li class="nav-item">
-        <a class="nav-link" href="SkmKepala">
+        <a class="nav-link" href="/KepalaBaakTabel">
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span></a>
       </li>
+
+
     </ul>
     <!-- End of Sidebar -->
 
@@ -145,19 +147,21 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Crab</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                  <p><?= $kbaak['nama']; ?></p>
+                </span>
                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg" />
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <div class="dropdown-item">
+                  <p><?= $kbaak['nip']; ?></p>
+                </div>
+                <!-- <div class="dropdown-item">
                   <p>222011691</p>
                   <p>3SD2</p>
-                </div>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
+                </div> -->
+
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

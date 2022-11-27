@@ -46,11 +46,6 @@ class Pages extends BaseController
         return view('pages/pengajuanSKM');
     }
 
-    public function profil()
-    {
-        // return view('welcome_message');
-        return view('pages/profil');
-    }
     public function SkmAdminStaff()
     {
         // return view('welcome_message');
