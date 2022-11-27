@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PengajuanModel;
+use App\Models\NotifModel;
 use CodeIgniter\Exceptions\AlertError;
 
 class CRUDPengajuan extends BaseController
@@ -11,6 +12,7 @@ class CRUDPengajuan extends BaseController
     public function __construct()
     {
         $this->pengajuanModel = new PengajuanModel();
+        $this->notifModel = new NotifModel();
     }
 
     public function index()
@@ -183,6 +185,10 @@ class CRUDPengajuan extends BaseController
             ]);
         }
 
+        $this->notifModel->save([
+            'notif_mahasiswa' => "Terdapat Pengajuan Baru"
+        ]);
+
         session()->setFlashdata("pesan", "Pengajuan Berhasil Ditambahkan");
 
         return redirect()->to('/pengajuanTabel');
@@ -298,7 +304,9 @@ class CRUDPengajuan extends BaseController
             ]);
         }
 
-
+        $this->notifModel->save([
+            'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
+        ]);
 
         session()->setFlashdata("pesan", "Pengajuan Berhasil Diperbaiki");
 
