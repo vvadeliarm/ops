@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PengajuanModel;
 use App\Models\MahasiswaModel;
+use App\Models\SuratModel;
 // use App\config\Services;
 
 class PengajuanTabel extends BaseController
@@ -14,6 +15,7 @@ class PengajuanTabel extends BaseController
     {
         $this->pengajuanModel = new PengajuanModel();
         $this->mahasiswaModel = new MahasiswaModel();
+        $this->suratModel = new SuratModel();
     }
 
     public function index()
@@ -22,7 +24,7 @@ class PengajuanTabel extends BaseController
         $session = session();
         // echo "Welcome back, ".$session->get('nama');
         $nim = $session->get('nim');
-        if($nim != NULL){
+        if ($nim != NULL) {
             // $pengajuan = $this->pengajuanModel->findAll();
             $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
             $pengajuanDetail = $atributmhs = $this->pengajuanModel->where(['nim' => $nim])->first();
@@ -38,7 +40,7 @@ class PengajuanTabel extends BaseController
                 'validation' => NULL
             ];
             return view('pages/layananSKM', $data);
-        } else{
+        } else {
             echo '<div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -57,7 +59,6 @@ class PengajuanTabel extends BaseController
             // view('pages/login');
             // echo '</script>'; 
         }
-        
     }
 
     public function detail($idpengajuan)
@@ -66,8 +67,10 @@ class PengajuanTabel extends BaseController
         // $session = session();
         // $nim = $session->get('nim');
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
         $data = [
             'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat,
             'validation' => \config\Services::validation()
         ];
         return view('pages/detail', $data);

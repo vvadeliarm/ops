@@ -24,4 +24,11 @@ class Previewpdf extends BaseController
         ];
         return view('pages/lihatpdf', $data);
     }
+
+    function download($namafile)
+    {
+        $file = "filePendukung/" . $namafile;
+        return $this->response->download($file, NULL);
+        // return redirect()->back()->back();
+    }
 }
