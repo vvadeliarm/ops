@@ -18,8 +18,11 @@ class TerimaKbaakTabel extends BaseController
     public function detail($idpengajuan)
     {
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaakDetail = $this->kepalaBaakModel->first();
+        // dd($kbaakDetail);
         $data = [
-            'pengajuanDetail' => $pengajuanDetail
+            'pengajuanDetail' => $pengajuanDetail,
+            'kbaakDetail' => $kbaakDetail
             // 'validation' => \config\Services::validation()
         ];
         return view('pages/kbaakterimadetail', $data);

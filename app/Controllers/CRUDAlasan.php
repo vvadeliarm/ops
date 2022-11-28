@@ -19,6 +19,7 @@ class CRUDAlasan extends BaseController
 
     public function insertAlasan($idpengajuan)
     {
-        dd($this->request->getVar('alasan'));
+        $this->request->getVar('alasan');
+        return redirect()->to('/KepalaBaakTabel');
     }
 }
