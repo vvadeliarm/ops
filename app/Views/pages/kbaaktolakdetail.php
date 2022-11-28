@@ -66,19 +66,39 @@
                     <h5 class="modal-title">PENOLAKAN SKM</h5>
                     <a href="/KepalaBaakTabel/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">X</button></a>
                 </div>
-                <div class="modal-body" style=" color: black; ">
-                    <form form action="/CRUDAlasan/insertAlasan" method="POST" enctype="multipart/form-data" class="row g-3">
+                <!-- <div class="modal-body" style=" color: black; ">
+                    <form form action="/CRUDAlasan/insertAlasan/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" enctype="multipart/form-data" class="row g-3">
 
                         <div class="form-group">
-                            Alasan :
-                            <textarea class="form-control" rows="5"></textarea>
+
                         </div>
                     </form>
-                    <button class="btn btn-danger" type="submit">Tolak</button>
 
-                </div>
+
+                </div> -->
                 <div class="modal-footer">
+                    <form form action="/CRUDStatus/tolakStatusSkm/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nama']; ?>" name="nama" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nim']; ?>" name="nim" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kelas']; ?>" name="kelas" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['prodi']; ?>" name="prodi" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tempattanggallahir']; ?>" name="tempattanggallahir" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['diploma']; ?>" name="diploma" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tahunakademik']; ?>" name="tahunakademik" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['status']; ?>" name="status" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kategori']; ?>" name="kategori" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tujuan']; ?>" name="tujuan" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['fileupload']; ?>" name="fileupload" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['namafile']; ?>" name="namafile" aria-label="readreadonly input example" readonly>
+                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
+                        Alasan :
+                        <textarea class="form-control" rows="5" name="alasan" required></textarea>
 
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak</button>
+
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
