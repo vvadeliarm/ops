@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "11b9ca501d92486367f82263f3f5c45c",
-=======
-    "content-hash": "631af174721be61b389b2d61c575438e",
->>>>>>> 638d0638ca39a3704698ef9aad734ed6339f911c
+    "content-hash": "e0e8d7bf6e2a6cd0b0d3b934af9af1df",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -274,7 +270,6 @@
             "time": "2022-10-10T10:11:09+00:00"
         },
         {
-<<<<<<< HEAD
             "name": "masterminds/html5",
             "version": "2.7.6",
             "source": {
@@ -307,7 +302,43 @@
                 "psr-4": {
                     "Masterminds\\": "src"
                 }
-=======
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Butcher",
+                    "email": "technosophos@gmail.com"
+                },
+                {
+                    "name": "Matt Farina",
+                    "email": "matt@mattfarina.com"
+                },
+                {
+                    "name": "Asmir Mustafic",
+                    "email": "goetas@gmail.com"
+                }
+            ],
+            "description": "An HTML5 parser and serializer.",
+            "homepage": "http://masterminds.github.io/html5-php",
+            "keywords": [
+                "HTML5",
+                "dom",
+                "html",
+                "parser",
+                "querypath",
+                "serializer",
+                "xml"
+            ],
+            "support": {
+                "issues": "https://github.com/Masterminds/html5-php/issues",
+                "source": "https://github.com/Masterminds/html5-php/tree/2.7.6"
+            },
+            "time": "2022-08-18T16:18:26+00:00"
+        },
+        {
             "name": "myth/auth",
             "version": "v1.2.1",
             "source": {
@@ -341,7 +372,6 @@
                 "exclude-from-classmap": [
                     "**/Database/Migrations/**"
                 ]
->>>>>>> 638d0638ca39a3704698ef9aad734ed6339f911c
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -349,35 +379,38 @@
             ],
             "authors": [
                 {
-<<<<<<< HEAD
-                    "name": "Matt Butcher",
-                    "email": "technosophos@gmail.com"
-                },
-                {
-                    "name": "Matt Farina",
-                    "email": "matt@mattfarina.com"
-                },
-                {
-                    "name": "Asmir Mustafic",
-                    "email": "goetas@gmail.com"
+                    "name": "Lonnie Ezell",
+                    "email": "lonnieje@gmail.com",
+                    "homepage": "http://newmythmedia.com",
+                    "role": "Developer"
                 }
             ],
-            "description": "An HTML5 parser and serializer.",
-            "homepage": "http://masterminds.github.io/html5-php",
+            "description": "Flexible authentication/authorization system for CodeIgniter 4.",
+            "homepage": "https://github.com/lonnieezell/myth-auth",
             "keywords": [
-                "HTML5",
-                "dom",
-                "html",
-                "parser",
-                "querypath",
-                "serializer",
-                "xml"
+                "Authentication",
+                "authorization",
+                "codeigniter"
             ],
             "support": {
-                "issues": "https://github.com/Masterminds/html5-php/issues",
-                "source": "https://github.com/Masterminds/html5-php/tree/2.7.6"
+                "issues": "https://github.com/lonnieezell/myth-auth/issues",
+                "source": "https://github.com/lonnieezell/myth-auth/tree/v1.2.1"
             },
-            "time": "2022-08-18T16:18:26+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/lonnieezell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/mgatner",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lonnieezell",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-07-13T18:35:46+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -468,40 +501,6 @@
                 "source": "https://github.com/dompdf/php-svg-lib/tree/0.5.0"
             },
             "time": "2022-09-06T12:16:56+00:00"
-=======
-                    "name": "Lonnie Ezell",
-                    "email": "lonnieje@gmail.com",
-                    "homepage": "http://newmythmedia.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Flexible authentication/authorization system for CodeIgniter 4.",
-            "homepage": "https://github.com/lonnieezell/myth-auth",
-            "keywords": [
-                "Authentication",
-                "authorization",
-                "codeigniter"
-            ],
-            "support": {
-                "issues": "https://github.com/lonnieezell/myth-auth/issues",
-                "source": "https://github.com/lonnieezell/myth-auth/tree/v1.2.1"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/lonnieezell",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/mgatner",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/lonnieezell",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2022-07-13T18:35:46+00:00"
->>>>>>> 638d0638ca39a3704698ef9aad734ed6339f911c
         },
         {
             "name": "psr/log",
@@ -1024,16 +1023,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.19",
+            "version": "9.2.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559"
+                "reference": "12fddc491826940cf9b7e88ad9664cf51f0f6d0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c77b56b63e3d2031bd8997fcec43c1925ae46559",
-                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
+                "reference": "12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
                 "shasum": ""
             },
             "require": {
@@ -1089,7 +1088,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.19"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.18"
             },
             "funding": [
                 {
@@ -1097,7 +1096,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-18T07:47:47+00:00"
+            "time": "2022-10-27T13:35:33+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

@@ -98,8 +98,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-
-                    <button type="button" class="btn btn-primary">Cetak</button>
+                    <a target = "_blank" href="/export-pdf" class="btn btn-primary">Export PDF</a>
+                    <button  type="button" class="btn btn-primary">Cetak</button>
                 </div>
             </div>
         </div>

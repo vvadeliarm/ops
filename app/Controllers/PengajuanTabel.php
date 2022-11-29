@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models\PengajuanModel;
 use App\Models\MahasiswaModel;
+use Config\View;
 // use App\config\Services;
+use Dompdf\Dompdf;
 
 class PengajuanTabel extends BaseController
 {
@@ -89,5 +91,27 @@ class PengajuanTabel extends BaseController
             'preview' => $preview
         ];
         return view('pages/previewpdf', $data);
+    }
+
+    public function exportPDF()
+    {
+        // reference the Dompdf namespace
+        // $data = {
+        //     'result'=>
+        // }
+        $view = view('pages/surat');
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('F4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
+        // $dompdf->stream("surat-skm", array("Attachment"=>false));
     }
 }

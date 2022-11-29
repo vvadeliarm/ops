@@ -47,6 +47,7 @@ $routes->get('/pages/pengajuanSKM/(:segment)', 'MahasiswaTabel::pengajuanSKM/$1'
 $routes->get('/PerbaikanTabel/(:segment)', 'PerbaikanTabel::perbaikiSKM/$1');
 $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::updatePengajuan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
