@@ -41,6 +41,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
+$routes->get('/HomeStaffBaakTabel/detail/(:segment)', 'HomeStaffBaakTabel::detail/$1');
 $routes->get('/TolakKbaakTabel/(:segment)', 'TolakKbaakTabel::detail/$1');
 $routes->get('/TerimaKbaakTabel/(:segment)', 'TerimaKbaakTabel::detail/$1');
 $routes->get('/pages/pengajuanSKM/(:segment)', 'MahasiswaTabel::pengajuanSKM/$1');
@@ -49,6 +50,9 @@ $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::update
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+$routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
+$routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

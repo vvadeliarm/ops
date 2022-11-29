@@ -41,7 +41,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="HomeAdminStaff">
+        <a class="nav-link" href="/HomeStaffBaakTabel">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
       </li>
@@ -49,8 +49,8 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="SkmAdminStaff" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-folder"></i>
+        <a class="nav-link" href="#">
+          <i class=" fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
 
@@ -168,7 +168,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $staff['nama']; ?></span>
                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
               </a>
               <!-- Dropdown - User Information -->
@@ -178,13 +178,8 @@
                                     Profile
                                 </a> -->
                 <div class="dropdown-item">
-                  <p>222011691</p>
-                  <p>3SD2</p>
+                  <p><?= $staff['nip']; ?></p>
                 </div>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -244,37 +239,26 @@
                 <th scope="col">Detail</th>
                 </tr>
                 </thead>
-
                 <tbody>
-                  <tr>
-                    <td scope="row">SKM0001</td>
-                    <td>12 Januari 2020</td>
-                    <td>Ahmad Subagyo</td>
-                    <td>Disetujui</td>
-                    <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SKM0002</td>
-                    <td>07 November 2021</td>
-                    <td>Cecep Suharjo</td>
-                    <td>Ditolak</td>
-                    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SKM0003</td>
-                    <td>01 Desember 2022</td>
-                    <td>Ahmad Subagyo</td>
-                    <td>Menunggu</td>
-                    <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#prosesModal">Proses</button></td>
-                  </tr>
-                  <tr>
-                    <td scope="row">SKM0004</td>
-                    <td>23 Januari 2023</td>
-                    <td>Ahmad Subagyo</td>
-                    <td>Dikembalikan</td>
-                    <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ajukanModal"> Lihat </button></td>
-                    <td></td>
-                  </tr>
+                  <?php foreach ($pengajuan as $p) : ?>
+                    <tr>
+                      <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
+                      <td><?= $p['tanggalpengajuan']; ?></td>
+                      <td><?= $p['nama']; ?></td>
+                      <td><?= $p['statusskm']; ?></td>
+                      <?php
+                      if ($p['statusskm'] == "Disetujui") { ?>
+                        <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success">Lihat</button></a></td>
+                      <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
+                        <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger">Lihat</button></a></td>
+                      <?php } elseif (($p['statusskm'] == "Diajukan Kembali") || ($p['statusskm'] == "Diajukan")) { ?>
+                        <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
+                      <?php } else { ?>
+                        <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ajukanModal"> Lihat </button></td>
+                        <td></td>
+                      <?php } ?>
+                    </tr>
+                  <?php endforeach; ?>
                 </tbody>
               </table>
             </div>
@@ -540,18 +524,18 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login">Logout</a>
+            <a class="btn btn-primary" href="/login/logout">Logout</a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="/js/sb-admin-2.min.js"></script>
