@@ -49,6 +49,7 @@ $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::update
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+// $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

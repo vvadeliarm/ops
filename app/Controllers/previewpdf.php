@@ -19,6 +19,7 @@ class Previewpdf extends BaseController
     public function previewpdf($idpengajuan)
     {
         $preview = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        // dd($preview);
         $data = [
             'preview' => $preview
         ];
