@@ -11,11 +11,19 @@
   <title>SB Admin 2 - Blank</title>
 
   <!-- Custom fonts for this template-->
+<<<<<<< HEAD
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="/text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
   <!-- Custom styles for this template-->
   <link href="/css/css/sb-admin-2.min.css" rel="stylesheet" />
+=======
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
 </head>
 
 <body id="page-top">
@@ -36,18 +44,32 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="HomeAdminStaff">
+        <a class="nav-link active" href="#">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+<<<<<<< HEAD
         <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+=======
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
       </li>
+<<<<<<< HEAD
+=======
+
+      <!-- Nav Item - Dashboard Input Data Kepala -->
+      <li class="nav-item">
+        <a class="nav-link" href="TTD kepala.html">
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>Tanda Tangan & Data</span></a>
+      </li>
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
     </ul>
     <!-- End of Sidebar -->
 
@@ -146,7 +168,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Mr. Crab</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $staff['nama']; ?></span>
                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg" />
               </a>
               <!-- Dropdown - User Information -->
@@ -156,13 +178,12 @@
                     Profile
                   </a> -->
                 <div class="dropdown-item">
-                  <p>222011691</p>
-                  <p>3SD2</p>
+                  <p><?= $staff['nip']; ?></p>
                 </div>
-                <a class="dropdown-item" href="#">
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
-                </a>
+                </a> -->
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -210,7 +231,11 @@
             <div class="col-lg-6">
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
+<<<<<<< HEAD
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+=======
+                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
                 </div>
               </div>
             </div>
@@ -252,21 +277,25 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<<<<<<< HEAD
           <a class="btn btn-primary" href="login.html">Logout</a>
+=======
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
         </div>
       </div>
     </div>
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="/js/sb-admin-2.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
 </body>
 
 </html>

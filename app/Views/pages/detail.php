@@ -60,52 +60,103 @@
                                             <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
                                             <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled>
                                         </div>
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <label for="formFile" class="form-label">File SKM</label>
                                             <br>
                                             <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
                                                 <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
                                             <?php } else { ?>
                                                 <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
-                                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
-                                                    <i class="fas fa-fw fa-file"></i>
-                                                    <span><?= $pengajuanDetail['namafile']; ?></span>
-                                                    <i class="fas fa-fw fa-eye"></i>
-                                                </a>
-                                            <?php } ?>
-                                        </div>
-                                    </form>
+                                        <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                            <i class="fas fa-fw fa-file"></i>
+                                            <span><?= $pengajuanDetail['namafile']; ?></span>
+                                            <i class="fas fa-fw fa-eye"></i>
+                                        </a>
+                                    <?php } ?>
+                                </div> -->
+                                <div class="col-md-12">
+                                    <label for="formFile" class="form-label">File SKM</label>
+                                    <br>
+                                    <a href="/Previewpdf/previewpdfSkm/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                        <i class="fas fa-fw fa-file"></i>
+                                        <span><?= $surat['nama surat']; ?></span>
+                                        <i class="fas fa-fw fa-eye"></i>
+                                    </a>
                                 </div>
-                                <div class="modal-footer">
-                                    <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
-                                </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
                             </div>
                         </div>
                     </div>
-
-                <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
-                    <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
-                <?php } elseif ($pengajuanDetail['statusskm'] == "Ditangguhkan") { ?>
-                    <button type="hidden" class="but" data-toggle="modal" data-target="#ditangguhkanModal"></button>
-                <?php } ?>
-
-            </section>
-            <!-- Akhir tabel -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; OPS BAAK 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
         </div>
-        <!-- End of Content Wrapper -->
+
+    <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+        <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
+    <?php } elseif ($pengajuanDetail['statusskm'] == "Ditangguhkan") { ?>
+        <button type="hidden" class="but" data-toggle="modal" data-target="#ditangguhkanModal"></button>
+    <?php } ?>
+
+    </section>
+    <!-- Akhir tabel -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; OPS BAAK 2022</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
 
+    <!-- Modal Disetujui -->
+    <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="idDokumen" class="form-label">Dokumen</label>
+                            <input class="form-control" type="text" placeholder="Dokumen_<?= sprintf("%03d", $pengajuanDetail['idpengajuan']); ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
+                            <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="formFile" class="form-label">File SKM</label>
+                            <br>
+                            <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
+                                <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
+                            <?php } else { ?>
+                                <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
+                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                                    <i class="fas fa-fw fa-file"></i>
+                                    <span><?= $pengajuanDetail['namafile']; ?></span>
+                                    <i class="fas fa-fw fa-eye"></i>
+                                </a>
+                            <?php } ?>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button  type="button" class="btn btn-primary">Cetak</button>
+                    <a href="export-pdf" class="btn btn-primary">Export PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Ditolak -->
     <div class="modal fade" id="ditolakModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
