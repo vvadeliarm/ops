@@ -51,7 +51,7 @@
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
-        <a class="nav-link" href="TTD kepala.html">
+        <a class="nav-link" href="/HomeStaffBaakTabel/ttdKepala">
           <i class="fas fa-fw fa-file-alt"></i>
           <span>Tanda Tangan & Data</span></a>
       </li>

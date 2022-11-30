@@ -41,18 +41,23 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="HomeKepala">
+                <a class="nav-link" href="/HomeStaffBaakTabel">
                     <i class="fas fa-fw fa-home"></i>
                     <span>Home</span></a>
             </li>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="SkmAdminStaff">
+                <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Layanan SKM</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-file-alt"></i>
+                    <span>Tanda Tangan & Data</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -161,7 +166,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $staff['nama']; ?></span>
                                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -171,13 +176,12 @@
                                     Profile
                                 </a> -->
                                 <div class="dropdown-item">
-                                    <p>222011691</p>
-                                    <p>3SD2</p>
+                                    <p><?= $staff['nip']; ?></p>
                                 </div>
-                                <a class="dropdown-item" href="#">
+                                <!-- <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
-                                </a>
+                                </a> -->
 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -200,23 +204,32 @@
                         <div class="row text-center mb-3">
                             <div class="col" style=" color: rgb(255, 255, 255) ;">
                                 <h2>FORM KEPALA BAAK</h2>
+                                <?php if (session()->getFlashdata("pesan")) : ?>
+                                    <div class="alert alert-success" role="alert">
+                                        <?= session()->getFlashdata("pesan") ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
 
                         </div>
                         <div class="row justify-content-center" style=" color: rgb(255, 255, 255) ;">
                             <div class="col-md-6">
-                                <form>
+                                <form form action="/KepalaBaakTabel/updateTTD/<?= $staff['nip']; ?>" enctype="multipart/form-data" method="POST" class="row g-3">
+                                    <div class="mb-3">
+                                        <label for="nama-kepala">NIP</label>
+                                        <input type="text" class="form-control" id="nama-kepala" name="nip" placeholder="NIP Kepala" required>
+                                    </div>
                                     <div class="mb-3">
                                         <label for="nama-kepala">Nama</label>
-                                        <input type="text" class="form-control" id="nama-kepala" placeholder="Nama beserta jabatan">
+                                        <input type="text" class="form-control" id="nama-kepala" name="nama" placeholder="Nama Kepala" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="ttd">Input File Tanda Tangan</label>
-                                        <input type="file" class="form-control-file" id="ttd">
+                                        <input type="file" class="form-control-file" id="ttd" name="ttd">
                                     </div>
                                     <div class="mb-3">
                                         <label for="cap">Input Cap</label>
-                                        <input type="file" class="form-control-file" id="cap">
+                                        <input type="file" class="form-control-file" id="cap" name="cap">
                                     </div>
                                     <div class="mb-3">
                                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -242,13 +255,36 @@
                     </div>
                 </footer>
 
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <a class="btn btn-primary" href="/login/logout">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Bootstrap core JavaScript-->
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="/vendor/jquery/jquery.min.js"></script>
+                <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
                 <!-- Core plugin JavaScript-->
-                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
                 <!-- Custom scripts for all pages-->
                 <script src="/js/sb-admin-2.min.js"></script>
