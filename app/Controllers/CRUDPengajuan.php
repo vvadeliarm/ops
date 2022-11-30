@@ -185,9 +185,9 @@ class CRUDPengajuan extends BaseController
             ]);
         }
 
-        $this->notifModel->save([
-            'notif_mahasiswa' => "Terdapat Pengajuan Baru"
-        ]);
+        // $this->notifModel->save([
+        //     'notif_mahasiswa' => "Terdapat Pengajuan Baru"
+        // ]);
 
         session()->setFlashdata("pesan", "Pengajuan Berhasil Ditambahkan");
 
@@ -212,19 +212,19 @@ class CRUDPengajuan extends BaseController
         //     return redirect()->to('pages/notifikasiPengajuan');
         // }
 
-        // if (!$this->validate([
-        //     'tujuan' => 'required'
-        // ])) {
-        //     session()->setFlashdata(
-        //         'msg',
-        //         '<div class="alert alert-danger">
-        //             <h2  style="text-align: center;">OOPS!!!</h2>
-        //             <p  style="text-align: center;">TIDAK ADA TUJUAN YANG DIMASUKKAN</p>
-        //             <p  style="text-align: center;">MASUKKAN TUJUAN TERLEBIH DAHULU</p>
-        //         </div>'
-        //     );
-        //     return redirect()->to('pages/notifikasiPengajuan');
-        // }
+        if (!$this->validate([
+            'tujuan' => 'required'
+        ])) {
+            session()->setFlashdata(
+                'msg',
+                '<div class="alert alert-danger">
+                    <h2  style="text-align: center;">OOPS!!!</h2>
+                    <p  style="text-align: center;">TIDAK ADA TUJUAN YANG DIMASUKKAN</p>
+                    <p  style="text-align: center;">MASUKKAN TUJUAN TERLEBIH DAHULU</p>
+                </div>'
+            );
+            return redirect()->to('pages/notifikasiPengajuan');
+        }
 
         $kategori = $this->request->getVar('kategori');
         if ($kategori != "Perpanjangan BPJS") {
@@ -304,9 +304,9 @@ class CRUDPengajuan extends BaseController
             ]);
         }
 
-        $this->notifModel->save([
-            'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
-        ]);
+        // $this->notifModel->save([
+        //     'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
+        // ]);
 
         session()->setFlashdata("pesan", "Pengajuan Berhasil Diperbaiki");
 
