@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\KepalaBaakModel;
+use App\Models\SuratModel;
 use App\Models\PengajuanModel;
 
 class KepalaBaakTabel extends BaseController
@@ -13,6 +14,7 @@ class KepalaBaakTabel extends BaseController
     {
         $this->kepalaBaakModel = new KepalaBaakModel();
         $this->pengajuanModel = new PengajuanModel();
+        $this->suratModel = new SuratModel();
     }
 
     public function index()
@@ -53,8 +55,11 @@ class KepalaBaakTabel extends BaseController
     public function detail($idpengajuan)
     {
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        // dd($surat);
         $data = [
-            'pengajuanDetail' => $pengajuanDetail
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
             // 'validation' => \config\Services::validation()
         ];
         return view('pages/kbaakdetail', $data);

@@ -92,4 +92,9 @@ class Pages extends BaseController
         // return view('welcome_message');
         return view('pages/previewpdf');
     }
+
+    public function arsip()
+    {
+        return view('pages/arsip');
+    }
 }

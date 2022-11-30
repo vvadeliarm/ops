@@ -54,9 +54,17 @@ $routes->get('/CRUDPengajuan/tolakPengajuanStaff/(:segment)', 'CRUDPengajuan::to
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+<<<<<<< HEAD
+// $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
+=======
+<<<<<<< HEAD
+$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
+=======
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 
+>>>>>>> 42dae27e812c973b7e5e443744ccdb268db99e6c
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
 /*
  * --------------------------------------------------------------------
  * Additional Routing
