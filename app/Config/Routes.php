@@ -50,16 +50,11 @@ $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::update
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
-<<<<<<< HEAD
-$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
-=======
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
-$routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
+$routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
 
->>>>>>> 42dae27e812c973b7e5e443744ccdb268db99e6c
 /*
  * --------------------------------------------------------------------
- * Additional Routing
  * --------------------------------------------------------------------
  *
  * There will often be times that you need additional routing and you

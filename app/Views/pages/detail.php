@@ -150,9 +150,9 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    
-                    <button  type="button" class="btn btn-primary">Cetak</button>
-                    <a href="export-pdf" class="btn btn-primary">Export PDF</a>
+                    <!-- <button href="/export-pdf" class="btn btn-primary">Export PDF</button> -->
+                    <button type="button" class="btn btn-primary">Cetak</button>
+                    <!-- <a href="/export-pdf" class="btn btn-warning">Export PDF</a> -->
                 </div>
             </div>
         </div>
@@ -202,6 +202,7 @@
                         <div class="col-md-12">
                             <label for="alasan" class="form-label">Alasan</label>
                             <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $pengajuanDetail['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
+                            <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-warning">Export PDF</a>
                         </div>
                     </form>
                 </div>
