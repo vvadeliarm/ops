@@ -231,6 +231,7 @@
                 <th scope=" col">Dokumen</th>
                                 <th scope="col">Tanggal dibuat</th>
                                 <th scope="col">Nama Mahasiswa</th>
+                                <th scope="col">NIM</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Detail</th>
                                 </tr>
@@ -243,6 +244,7 @@
                                             <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                                             <td><?= $p['tanggalpengajuan']; ?></td>
                                             <td><?= $p['nama']; ?></td>
+                                            <td><?= $p['nim']; ?></td> 
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
