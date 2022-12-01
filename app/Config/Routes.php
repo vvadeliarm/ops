@@ -54,29 +54,12 @@ $routes->get('/CRUDPengajuan/tolakPengajuanStaff/(:segment)', 'CRUDPengajuan::to
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> c6afd06eb1835d156630653ce4d954cac6b95f26
-// $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
+$routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 $routes->get('export-pdf', 'PengajuanTabel::exportPDF');
-<<<<<<< HEAD
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
-=======
-=======
->>>>>>> 72521062e2818ea1cb38a32a3d36d4d2afb75648
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
-
-<<<<<<< HEAD
-=======
->>>>>>> 42dae27e812c973b7e5e443744ccdb268db99e6c
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
->>>>>>> 72521062e2818ea1cb38a32a3d36d4d2afb75648
->>>>>>> c6afd06eb1835d156630653ce4d954cac6b95f26
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------
