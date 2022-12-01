@@ -21,32 +21,37 @@ class CRUDStatus extends BaseController
 
     public function terimaStatusSkm($idpengajuan)
     {
-        $kategori = $this->request->getVar('kategori');
-        $kbaak = $this->kepalaBaakModel->first();
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+        // dd($kbaak);
+        $kategori = $pengajuanDetail['statusskm'];
         $namaKbaak = $kbaak['nama'];
         $nip = $kbaak['nip'];
         if ($kategori != "Perpanjangan BPJS") {
-            $file = $this->request->getVar('namafile');
-            $namaFile = $this->request->getVar('namafile');
+            $file = $pengajuanDetail['namafile'];
+            $namaFile = $pengajuanDetail['namafile'];
 
             $this->pengajuanModel->save([
                 'statusskm' => "Disetujui",
                 'idpengajuan' => $idpengajuan,
-                'nama' => $this->request->getVar('nama'),
-                'nim' => $this->request->getVar('nim'),
-                'kelas' => $this->request->getVar('kelas'),
-                'prodi' => $this->request->getVar('prodi'),
-                'semester' => $this->request->getVar('semester'),
-                'tempattanggallahir' => $this->request->getVar('tempattanggallahir'),
-                'diploma' => $this->request->getVar('diploma'),
-                'tahunakademik' => $this->request->getVar('tahunakademik'),
-                'status' => $this->request->getVar('status'),
-                'kategori' => $this->request->getVar('kategori'),
-                'tujuan' => $this->request->getVar('tujuan'),
-                'fileupload' => $namaFile,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'fileupload' => $file,
                 'namafile' => $namaFile,
                 'namakbaak' => $namaKbaak,
-                'nipkbaak' => $nip
+                'nipkbaak' => $nip,
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
 
             ]);
         } else {
@@ -56,21 +61,20 @@ class CRUDStatus extends BaseController
             $this->pengajuanModel->save([
                 'statusskm' => "Disetujui",
                 'idpengajuan' => $idpengajuan,
-                'nama' => $this->request->getVar('nama'),
-                'nim' => $this->request->getVar('nim'),
-                'kelas' => $this->request->getVar('kelas'),
-                'prodi' => $this->request->getVar('prodi'),
-                'semester' => $this->request->getVar('semester'),
-                'tempattanggallahir' => $this->request->getVar('tempattanggallahir'),
-                'diploma' => $this->request->getVar('diploma'),
-                'tahunakademik' => $this->request->getVar('tahunakademik'),
-                'status' => $this->request->getVar('status'),
-                'kategori' => $this->request->getVar('kategori'),
-                'tujuan' => $this->request->getVar('tujuan'),
-                'fileupload' => $namaFile,
-                'namafile' => $namaFile,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
                 'namakbaak' => $namaKbaak,
-                'nipkbaak' => $nip
+                'nipkbaak' => $nip,
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
             ]);
         }
 
@@ -85,33 +89,37 @@ class CRUDStatus extends BaseController
 
     public function tolakStatusSkm($idpengajuan)
     {
-        $kategori = $this->request->getVar('kategori');
-        $kbaak = $this->kepalaBaakModel->first();
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+        // dd($kbaak);
+        $kategori = $pengajuanDetail['statusskm'];
         $namaKbaak = $kbaak['nama'];
         $nip = $kbaak['nip'];
         if ($kategori != "Perpanjangan BPJS") {
-            $file = $this->request->getVar('namafile');
-            $namaFile = $this->request->getVar('namafile');
+            $file = $pengajuanDetail['namafile'];
+            $namaFile = $pengajuanDetail['namafile'];
 
             $this->pengajuanModel->save([
                 'statusskm' => "Ditolak",
                 'idpengajuan' => $idpengajuan,
-                'nama' => $this->request->getVar('nama'),
-                'nim' => $this->request->getVar('nim'),
-                'kelas' => $this->request->getVar('kelas'),
-                'prodi' => $this->request->getVar('prodi'),
-                'semester' => $this->request->getVar('semester'),
-                'tempattanggallahir' => $this->request->getVar('tempattanggallahir'),
-                'diploma' => $this->request->getVar('diploma'),
-                'tahunakademik' => $this->request->getVar('tahunakademik'),
-                'status' => $this->request->getVar('status'),
-                'kategori' => $this->request->getVar('kategori'),
-                'tujuan' => $this->request->getVar('tujuan'),
-                'alasan' => $this->request->getVar('alasan'),
-                'fileupload' => $namaFile,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'fileupload' => $file,
                 'namafile' => $namaFile,
                 'namakbaak' => $namaKbaak,
-                'nipkbaak' => $nip
+                'nipkbaak' => $nip,
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
 
             ]);
         } else {
@@ -121,22 +129,20 @@ class CRUDStatus extends BaseController
             $this->pengajuanModel->save([
                 'statusskm' => "Ditolak",
                 'idpengajuan' => $idpengajuan,
-                'nama' => $this->request->getVar('nama'),
-                'nim' => $this->request->getVar('nim'),
-                'kelas' => $this->request->getVar('kelas'),
-                'prodi' => $this->request->getVar('prodi'),
-                'semester' => $this->request->getVar('semester'),
-                'tempattanggallahir' => $this->request->getVar('tempattanggallahir'),
-                'diploma' => $this->request->getVar('diploma'),
-                'tahunakademik' => $this->request->getVar('tahunakademik'),
-                'status' => $this->request->getVar('status'),
-                'kategori' => $this->request->getVar('kategori'),
-                'tujuan' => $this->request->getVar('tujuan'),
-                'alasan' => $this->request->getVar('alasan'),
-                'fileupload' => $namaFile,
-                'namafile' => $namaFile,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
                 'namakbaak' => $namaKbaak,
-                'nipkbaak' => $nip
+                'nipkbaak' => $nip,
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
             ]);
         }
 

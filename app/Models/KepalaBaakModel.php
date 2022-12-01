@@ -16,9 +16,9 @@ class KepalaBaakModel extends Model
 
     protected $allowedFields = ['ttd', 'cap'];
 
-    // protected $useTimestamps = true;
-    // protected $createdField  = 'created_at';
-    // protected $updatedField  = 'tanggalacckbaak';
+    protected $useTimestamps = true;
+    protected $createdField  = 'tanggalditambahkan';
+    protected $updatedField  = 'tanggalacckbaak';
     // protected $deletedField  = 'deleted_at';
 
     #protected $validationRules    = [];

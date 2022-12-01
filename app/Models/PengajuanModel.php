@@ -16,7 +16,8 @@ class PengajuanModel extends Model
     protected $allowedFields = [
         'nama', 'nim', 'kelas', 'prodi', 'semester', 'tempattanggallahir',
         'diploma', 'tahunakademik', 'status', 'kategori', 'tujuan', 'statusskm',
-        'fileupload', 'namafile', 'alasan', 'nipoperator', 'namaoperator', 'tanggalcekoperator'
+        'fileupload', 'namafile', 'alasan', 'nipoperator', 'namaoperator', 'tanggalcekoperator',
+        'tanggalacckbaak', 'nipkbaak', 'namakbaak'
     ];
     //
 
