@@ -46,12 +46,23 @@
                     <span>Home</span></a>
             </li>
 
-            <!-- Nav Item - Dashboard -->
+            <!-- Nav Item - Layanan SKM -->
             <li class="nav-item">
                 <a class="nav-link" href="/KepalaBaakTabel">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Layanan SKM</span></a>
             </li>
+
+            <!-- Nav Item - Arsip SKM -->
+            <li class="nav-item">
+                <a class="nav-link" href="/arsipSKM">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Arsip SKM</span></a>
+            </li>
+
+
+
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -201,7 +212,7 @@
                     <div class="container" style="background-color:white; color: black ;">
                         <div class="row text-center mb-5">
                             <div class="col">
-                                <h3>Daftar SKM </h3>
+                                <h3>Daftar Arsip SKM </h3>
 
                             </div>
 
@@ -211,7 +222,7 @@
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
-                                        <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+                                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
                                         <li><a href="#">Semua</a></li>
                                         <li><a href="#">Diajukan</a></li>
                                         <li><a href="#">Proses</a></li>
@@ -231,8 +242,7 @@
                 <th scope=" col">Dokumen</th>
                                 <th scope="col">Tanggal dibuat</th>
                                 <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NIM</th>
-                                <th scope="col">Status</th>
+                                <!-- <th scope="col">Status</th> -->
                                 <th scope="col">Detail</th>
                                 </tr>
                                 </thead>
@@ -244,17 +254,16 @@
                                             <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                                             <td><?= $p['tanggalpengajuan']; ?></td>
                                             <td><?= $p['nama']; ?></td>
-                                            <td><?= $p['nim']; ?></td> 
-                                            <td><?= $p['statusskm']; ?></td>
+                                            <!-- <td><?= $p['statusskm']; ?></td> -->
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
-                                            <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
+                                                <!-- <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
                                             <?php } else { ?>
-                                                <td></td>
+                                                <td></td> -->
                                             <?php } ?>
                                         </tr>
                                     <?php endforeach; ?>

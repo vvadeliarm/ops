@@ -195,6 +195,7 @@
                                         <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
                                             <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Perbaiki</button></a></td>
                                         <?php } else { ?>
+                                            <td><button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#ajukanModal"> Lihat </button></td>
                                             <td></td>
                                         <?php } ?>
                                     </tr>
@@ -239,6 +240,22 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
+
+    <!-- Modal Diajukan -->
+    <div class="modal fade" id="ajukanModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #2E179D; color: White; ">
+                    <h5 class="modal-title">Detail SKM</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-body" style=" color: black; ">
+                    SKM dalam proses.
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

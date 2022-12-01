@@ -106,9 +106,9 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-
-                        <button type="button" class="btn btn-primary">Cetak</button>
+                        <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
                     </div>
+
                 </div>
             </div>
         </div>

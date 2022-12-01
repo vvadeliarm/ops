@@ -14,12 +14,12 @@ class KepalaBaakModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    #protected $allowedFields = ['name', 'email'];
+    protected $allowedFields = ['ttd', 'cap'];
 
-    protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'tanggalacckbaak';
-    protected $deletedField  = 'deleted_at';
+    // protected $useTimestamps = true;
+    // protected $createdField  = 'created_at';
+    // protected $updatedField  = 'tanggalacckbaak';
+    // protected $deletedField  = 'deleted_at';
 
     #protected $validationRules    = [];
     #protected $validationMessages = [];

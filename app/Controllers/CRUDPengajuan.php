@@ -312,4 +312,182 @@ class CRUDPengajuan extends BaseController
 
         return redirect()->to('/pengajuanTabel');
     }
+
+    public function teruskanPengajuanStaff($idpengajuan)
+    {
+        // dd($this->request->getVar('file'));
+        // dd($this->request->getVar('nipoperator'));
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+
+        $kategori = $this->request->getVar('kategori');
+        if ($kategori != "Perpanjangan BPJS") {
+            $this->pengajuanModel->save([
+                'statusskm' => "Diteruskan",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'fileupload' => $pengajuanDetail['fileupload'],
+                'namafile' => $pengajuanDetail['namafile'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator')
+            ]);
+        } else {
+            $this->pengajuanModel->save([
+                'statusskm' => "Diteruskan",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator')
+            ]);
+        }
+
+        // $this->notifModel->save([
+        //     'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
+        // ]);
+
+        session()->setFlashdata("pesan", "Pengajuan Berhasil Diteruskan");
+
+        return redirect()->to('/HomeStaffBaakTabel/LayananSkm');
+    }
+
+    public function tangguhkanPengajuanStaff($idpengajuan)
+    {
+        // dd($this->request->getVar('file'));
+        // dd($this->request->getVar('nipoperator'));
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+
+        $kategori = $this->request->getVar('kategori');
+        if ($kategori != "Perpanjangan BPJS") {
+            $this->pengajuanModel->save([
+                'statusskm' => "Ditangguhkan",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'fileupload' => $pengajuanDetail['fileupload'],
+                'namafile' => $pengajuanDetail['namafile'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator'),
+                'alasan' => $this->request->getVar('alasan')
+            ]);
+        } else {
+            $this->pengajuanModel->save([
+                'statusskm' => "Ditangguhkankan",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator'),
+                'alasan' => $this->request->getVar('alasan')
+            ]);
+        }
+
+        // $this->notifModel->save([
+        //     'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
+        // ]);
+
+        session()->setFlashdata("pesan", "Pengajuan Berhasil Ditangguhkan");
+
+        return redirect()->to('/HomeStaffBaakTabel/LayananSkm');
+    }
+
+    public function tolakPengajuanStaff($idpengajuan)
+    {
+        // dd($this->request->getVar('file'));
+        // dd($this->request->getVar('nipoperator'));
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+
+        $kategori = $this->request->getVar('kategori');
+        if ($kategori != "Perpanjangan BPJS") {
+            $this->pengajuanModel->save([
+                'statusskm' => "Ditolak",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'fileupload' => $pengajuanDetail['fileupload'],
+                'namafile' => $pengajuanDetail['namafile'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator'),
+                'alasan' => $this->request->getVar('alasan')
+            ]);
+        } else {
+            $this->pengajuanModel->save([
+                'statusskm' => "Ditolak",
+                'idpengajuan' => $idpengajuan,
+                'nama' => $pengajuanDetail['nama'],
+                'nim' => $pengajuanDetail['nim'],
+                'kelas' => $pengajuanDetail['kelas'],
+                'prodi' => $pengajuanDetail['prodi'],
+                'semester' => $pengajuanDetail['semester'],
+                'tempattanggallahir' => $pengajuanDetail['tempattanggallahir'],
+                'diploma' => $pengajuanDetail['diploma'],
+                'tahunakademik' => $pengajuanDetail['tahunakademik'],
+                'status' => $pengajuanDetail['status'],
+                'kategori' => $pengajuanDetail['kategori'],
+                'tujuan' => $pengajuanDetail['tujuan'],
+                'nipoperator' => $this->request->getVar('nipoperator'),
+                'namaoperator' => $this->request->getVar('namaoperator'),
+                'alasan' => $this->request->getVar('alasan')
+            ]);
+        }
+
+        // $this->notifModel->save([
+        //     'notif_mahasiswa' => "Terdapat Mahasiswa Yang Memperbaiki Pengajuan"
+        // ]);
+
+        session()->setFlashdata("pesan", "Pengajuan Berhasil Ditolak");
+
+        return redirect()->to('/HomeStaffBaakTabel/LayananSkm');
+    }
 }

@@ -47,12 +47,30 @@ $routes->get('/TerimaKbaakTabel/(:segment)', 'TerimaKbaakTabel::detail/$1');
 $routes->get('/pages/pengajuanSKM/(:segment)', 'MahasiswaTabel::pengajuanSKM/$1');
 $routes->get('/PerbaikanTabel/(:segment)', 'PerbaikanTabel::perbaikiSKM/$1');
 $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::updatePengajuan/$1');
+$routes->get('/KepalaBaakTabel/updateTTD/(:segment)', '/KepalaBaakTabel::updateTTD/$1');
+$routes->get('/CRUDPengajuan/teruskanPengajuanStaff/(:segment)', 'CRUDPengajuan::teruskanPengajuanStaff/$1');
+$routes->get('/CRUDPengajuan/tangguhkanPengajuanStaff/(:segment)', 'CRUDPengajuan::tangguhkanPengajuanStaff/$1');
+$routes->get('/CRUDPengajuan/tolakPengajuanStaff/(:segment)', 'CRUDPengajuan::tolakPengajuanStaff/$1');
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+// $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
+=======
+<<<<<<< HEAD
+$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
+=======
+>>>>>>> 72521062e2818ea1cb38a32a3d36d4d2afb75648
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
 
+<<<<<<< HEAD
+=======
+>>>>>>> 42dae27e812c973b7e5e443744ccdb268db99e6c
+>>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+>>>>>>> 72521062e2818ea1cb38a32a3d36d4d2afb75648
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------
