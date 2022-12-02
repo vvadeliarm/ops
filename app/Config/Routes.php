@@ -40,6 +40,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
+$routes->get('/PengajuanTabel/detailSetuju/(:segment)', 'PengajuanTabel::detailSetuju/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/timestamp/(:segment)', 'KepalaBaakTabel::timestamp/$1');
 $routes->get('/KepalaBaakTabel/timestamp2/(:segment)', 'KepalaBaakTabel::timestamp2/$1');

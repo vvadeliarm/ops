@@ -75,27 +75,27 @@
                                 <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed>
                             <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                                 <i class="fas fa-fw fa-file"></i>
-                                <span><?= $surat['nama surat']; ?></span>
+                                <span>< $surat['nama surat']; ?></span>
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
                         <?php } ?>
                     </div> -->
 
-                                            <div class="col-md-12">
+                                            <!-- <div class="col-md-12">
                                                 <label for="formFile" class="form-label">File SKM</label>
                                                 <br>
                                                 <a href="/Previewpdf/previewpdfSkm/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                                                     <i class="fas fa-fw fa-file"></i>
-                                                    <span><?= $surat['nama surat']; ?></span>
+                                                    <span>< $surat['nama surat']; ?></span>
                                                     <i class="fas fa-fw fa-eye"></i>
                                                 </a>
-                                            </div>
+                                            </div> -->
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
+                                    <!-- <div class="modal-footer">
 
-                                        <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
-                                    </div>
+                                        <a href="/Previewpdf/download/< $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -242,6 +242,8 @@
                             <div class="col-12">
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
+                            </div>
+                            <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit" style="background-color: green;">Teruskan SKM</button>
                             </div>
                         </form>
@@ -268,7 +270,9 @@
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
-                                <div><button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button></div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button>
+                                </div>
 
                             </div>
                         </form>
@@ -292,9 +296,13 @@
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
-                                <div><button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button></div>
 
                             </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button>
+                            </div>
+
+
                         </form>
 
 
