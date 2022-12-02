@@ -46,9 +46,23 @@
                     <button type="hidden" class="but" data-toggle="modal" data-target="#ditangguhkanModal"></button>
                 <?php } ?>
 
+<<<<<<< HEAD
             </section>
             <!-- Akhir tabel -->
 
+=======
+<<<<<<< HEAD
+
+                <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+                    <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
+                <?php } elseif ($pengajuanDetail['statusskm'] == "Ditangguhkan") { ?>
+                    <button type="hidden" class="but" data-toggle="modal" data-target="#ditangguhkanModal"></button>
+                <?php } ?>
+
+            </section>
+            <!-- Akhir tabel -->
+
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -58,6 +72,11 @@
                 </div>
             </footer>
             <!-- End of Footer -->
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
         </div>
         <!-- End of Content Wrapper -->
     </div>
@@ -81,29 +100,33 @@
                             <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
                             <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled>
                         </div>
+                        <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
                         <div class="col-md-12">
-                            <label for="formFile" class="form-label">File SKM</label>
-                            <br>
-                            <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
-                                <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
-                            <?php } else { ?>
-                                <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
-                                <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                            <label for="namaMhsw" class="form-label">File SKM</label>
+                            <!-- <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled> -->
+                            <div>
+                                <a href="/view-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                                     <i class="fas fa-fw fa-file"></i>
                                     <span><?= $pengajuanDetail['namafile']; ?></span>
                                     <i class="fas fa-fw fa-eye"></i>
                                 </a>
-                            <?php } ?>
+                            </div>
                         </div>
-                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <!-- <button href="/export-pdf" class="btn btn-primary">Export PDF</button> -->
-                    <button type="button" class="btn btn-primary">Cetak</button>
+                    <!-- <button type="button" class="btn btn-primary">Export PDF</button> -->
+                    <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-primary">Cetak</a>
                     <!-- <a href="/export-pdf" class="btn btn-warning">Export PDF</a> -->
                 </div>
+                </form>
             </div>
+
+
+
         </div>
+    </div>
     </div>
 
     <!-- Modal Ditolak -->
@@ -151,9 +174,13 @@
 
                             <label for="alasan" class="form-label">Alasan</label>
                             <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $pengajuanDetail['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
+<<<<<<< HEAD
                             <div class="modal-footer">
                                 <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-primary">Export PDF</a>
                             </div>
+=======
+                            
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
                         </div>
                     </form>
                 </div>

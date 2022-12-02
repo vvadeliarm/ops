@@ -71,11 +71,11 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="" method="get" autocomplete="off">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" name="keyword" value="<?= $keyword ?>" class="form-control bg-light border-0 small" placeholder="Cari NIM/Nama Mahasiswa..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="submit" name="submit">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -210,18 +210,36 @@
 
                             <br>
                             <div class="dropdown">
+<<<<<<< HEAD
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+=======
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
+                                        <span class="caret"></span></button> -->
+                                    <!-- <ul class="dropdown-menu">
+                                        //<input class="form-control" id="myInput" type="text" placeholder="Search..">
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
                                         <li><a href="#">Semua</a></li>
                                         <li><a href="#">Diajukan</a></li>
                                         <li><a href="#">Proses</a></li>
                                         <li><a href="#">Disetujui</a></li>
                                         <li><a href="#">Ditolak</a></li>
 
-                                    </ul>
+                                    </ul> -->
+                                    <select id="statusskm">
+                                        <!-- <option value="">Pilih Status SKM</option> -->
+                                        <option value="Semua">Semua</option>
+                                        <option value="Disetujui">Disetujui</option>
+                                        <option value="Ditolak">Ditolak</option>
+                                        <option value="Proses">Proses</option>
+                                        <option value="Ditangguhkan">Ditangguhkan</option>
+                                        <option value="Diajukan kembali">Diajukan kembali</option>
+                                    </select>
+
                                 </div>
                             </div>
 
@@ -542,6 +560,29 @@
 
         <!-- Custom scripts for all pages-->
         <script src="/js/sb-admin-2.min.js"></script>
+
+        <!-- Filtering -->
+        <script type="text/javascript">
+            table = $('#pengajuan').DataTable({
+                "order": [],
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "<?php echo site_url('Datatables/table_data'); ?>",
+                    "type": "POST",
+                    "data": function(data) {
+                        data.statusskm = $('statusskm').val();
+                    }
+                },
+                "columnDefs": [{
+                    "targets": [0],
+                    "orderable": false
+                }]
+            });
+            $('statusskm').change(function() {
+                table.draw();
+            });
+        </script>
 
 </body>
 

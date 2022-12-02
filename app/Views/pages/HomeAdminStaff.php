@@ -56,11 +56,22 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+           <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
             <i class="fas fa-fw fa-folder"></i>
             <span>Layanan SKM</span>
+<<<<<<< HEAD
           </a>
       </li> -->
+=======
+        </a>
+        
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Layanan SKM</span>
+        </a>
+     
+      </li>
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
@@ -229,8 +240,13 @@
             <div class="col-lg-6">
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
+<<<<<<< HEAD
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
 
+=======
+                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
                 </div>
               </div>
             </div>
@@ -272,10 +288,10 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <<<<<<< HEAD <a class="btn btn-primary" href="login.html">Logout</a>
-            =======
-            <a class="btn btn-primary" href="/login/logout">Logout</a>
-            >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+           
+            
         </div>
       </div>
     </div>
