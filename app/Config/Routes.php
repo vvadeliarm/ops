@@ -57,23 +57,21 @@ $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatus
 $routes->get('/CRUDStatus/terimaStatusSkm/(:segment)', 'CRUDStatus::terimaStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
-<<<<<<< HEAD
 
 // $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 
-$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
+
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
 $routes->get('/view-pdf/(:segment)','PengajuanTabel::viewPDF/$1');
 
-=======
 $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 $routes->get('export-pdf', 'PengajuanTabel::exportPDF');
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)', 'PengajuanTabel::exportPDF/$1');
->>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
+setlocale(LC_TIME, 'IND');
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------
