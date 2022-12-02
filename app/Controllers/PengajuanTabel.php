@@ -8,6 +8,9 @@ use Config\View;
 use App\Models\SuratModel;
 use App\config\Services;
 use Dompdf\Dompdf;
+use Dompdf\Options;
+
+
 
 class PengajuanTabel extends BaseController
 {
@@ -26,6 +29,7 @@ class PengajuanTabel extends BaseController
         $session = session();
         // echo "Welcome back, ".$session->get('nama');
         $nim = $session->get('nim');
+        
         if ($nim != NULL) {
             // $pengajuan = $this->pengajuanModel->findAll();
             $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
@@ -96,25 +100,85 @@ class PengajuanTabel extends BaseController
         return view('pages/previewpdf', $data);
     }
 
-    public function exportPDF()
+    public function exportPDF($idpengajuan)
     {
+        // require 'autoload.php';
+        // session();
+        // // $session = session();
+        // // $nim = $session->get('nim');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
+        ];
+     
+       
         // reference the Dompdf namespace
-        // $data = {
-        //     'result'=>
-        // }
-        $view = view('pages/surat');
+        
+        $options = new Options;
+        $options->set('chroot', realpath(''));
+        $options->setIsRemoteEnabled(true);
+        
+        $options->isHtml5ParserEnabled(true);
+        $view = view('pages/surat', $data);
+        
         // instantiate and use the dompdf class
+
         $dompdf = new Dompdf();
         $dompdf->loadHtml($view);
-
+        // $dompdf->setBasePath();
+        // $dompdf->set_option('IsRemoteEnabled',TRUE);
         // (Optional) Setup the paper size and orientation
-        $dompdf->setPaper('F4', 'landscape');
-
+        $dompdf->setPaper('A4', 'potrait');
+        $canvas = $dompdf->get_canvas();
         // Render the HTML as PDF
         $dompdf->render();
 
         // Output the generated PDF to Browser
         $dompdf->stream();
         // $dompdf->stream("surat-skm", array("Attachment"=>false));
+        // return view('pages/surat', $data);
+    }
+
+    public function viewPDF($idpengajuan)
+    {
+        // require 'autoload.php';
+        // session();
+        // // $session = session();
+        // // $nim = $session->get('nim');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
+        ];
+     
+       
+        // reference the Dompdf namespace
+        
+        $options = new Options;
+        $options->set('chroot', realpath(''));
+        $options->setIsRemoteEnabled(true);
+        
+        $options->isHtml5ParserEnabled(true);
+        $view = view('pages/surat', $data);
+        
+        // instantiate and use the dompdf class
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        // $dompdf->setBasePath();
+        // $dompdf->set_option('IsRemoteEnabled',TRUE);
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'potrait');
+        $canvas = $dompdf->get_canvas();
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        // $dompdf->stream();
+        $dompdf->stream("surat-skm", array("Attachment"=>false));
+        // return view('pages/surat', $data);
     }
 }

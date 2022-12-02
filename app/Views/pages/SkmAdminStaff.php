@@ -58,7 +58,7 @@
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
-        <a class="nav-link" href="TTDKepala">
+        <a class="nav-link" href="/HomeStaffBaakTabel/ttdKepala">
           <i class="fas fa-fw fa-file-alt"></i>
           <span>Tanda Tangan & Data</span></a>
       </li>
@@ -196,8 +196,13 @@
 
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
-          <h1 style="color: white ; text-align: center;"> LAYANAN SKM</h1>
+        <div class="container-fluid" style="text-align: center;">
+          <h1 style=" color: white ; text-align: center;"> LAYANAN SKM</h1>
+          <?php if (session()->getFlashdata("pesan")) : ?>
+            <div class="alert alert-success" role="alert">
+              <?= session()->getFlashdata("pesan") ?>
+            </div>
+          <?php endif; ?>
           <p style="color: white; text-align: center;">
             Surat Keterangan Mahasiswa (SKM) merupakan salah satu jenis layanan kemahasiswaan yang dapat diakses mahasiswa yang bertujuan untuk legalitas dokumen dan kegiatan sesuai administrasi Politeknik Statistika STIS
           </p>
@@ -235,6 +240,7 @@
                 <th scope=" col">Dokumen</th>
                 <th scope="col">Tanggal dibuat</th>
                 <th scope="col">Nama Mahasiswa</th>
+                <th scope="col">NIM</th>
                 <th scope="col">Status</th>
                 <th scope="col">Detail</th>
                 </tr>
@@ -245,6 +251,7 @@
                       <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                       <td><?= $p['tanggalpengajuan']; ?></td>
                       <td><?= $p['nama']; ?></td>
+                      <td><?= $p['nim']; ?></td>
                       <td><?= $p['statusskm']; ?></td>
                       <?php
                       if ($p['statusskm'] == "Disetujui") { ?>

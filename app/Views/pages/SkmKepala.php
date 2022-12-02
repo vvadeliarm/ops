@@ -241,6 +241,7 @@
                 <th scope=" col">Dokumen</th>
                                 <th scope="col">Tanggal dibuat</th>
                                 <th scope="col">Nama Mahasiswa</th>
+                                <th scope="col">NIM</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Detail</th>
                                 </tr>
@@ -253,13 +254,14 @@
                                             <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                                             <td><?= $p['tanggalpengajuan']; ?></td>
                                             <td><?= $p['nama']; ?></td>
+                                            <td><?= $p['nim']; ?></td>
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
-                                            <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
+                                            <?php } elseif ($p['statusskm'] == "Diteruskan") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
                                             <?php } else { ?>
                                                 <td></td>

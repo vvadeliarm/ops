@@ -11,19 +11,16 @@
   <title>SB Admin 2 - Blank</title>
 
   <!-- Custom fonts for this template-->
-<<<<<<< HEAD
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="/text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
   <!-- Custom styles for this template-->
   <link href="/css/css/sb-admin-2.min.css" rel="stylesheet" />
-=======
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet" />
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
 </head>
 
 <body id="page-top">
@@ -51,25 +48,26 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-<<<<<<< HEAD
         <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-=======
+<<<<<<< HEAD
         <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
-      </li>
-<<<<<<< HEAD
 =======
+          <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+          </a>
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
+      </li>
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
-        <a class="nav-link" href="TTD kepala.html">
+        <a class="nav-link" href="/HomeStaffBaakTabel/ttdKepala">
           <i class="fas fa-fw fa-file-alt"></i>
           <span>Tanda Tangan & Data</span></a>
       </li>
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
     </ul>
     <!-- End of Sidebar -->
 
@@ -233,9 +231,13 @@
                 <div class="card-body">
 <<<<<<< HEAD
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
-=======
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+=======
+                  <<<<<<< HEAD <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  =======
+                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
                 </div>
               </div>
             </div>
@@ -278,10 +280,14 @@
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
 <<<<<<< HEAD
-          <a class="btn btn-primary" href="login.html">Logout</a>
-=======
+          
           <a class="btn btn-primary" href="/login/logout">Logout</a>
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+=======
+          <<<<<<< HEAD <a class="btn btn-primary" href="login.html">Logout</a>
+            =======
+            <a class="btn btn-primary" href="/login/logout">Logout</a>
+            >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
         </div>
       </div>
     </div>

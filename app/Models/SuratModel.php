@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class SuratModel extends Model
 {
+    
     protected $table      = 'surat';
     protected $primaryKey = 'idsurat';
 

@@ -14,10 +14,14 @@ class KepalaBaakModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    #protected $allowedFields = ['name', 'email'];
+    protected $allowedFields = ['ttd', 'cap'];
 
     protected $useTimestamps = true;
+<<<<<<< HEAD
     protected $createdField  = 'tanggalpembuatan';
+=======
+    protected $createdField  = 'tanggalditambahkan';
+>>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
     protected $updatedField  = 'tanggalacckbaak';
     // protected $deletedField  = 'deleted_at';
 

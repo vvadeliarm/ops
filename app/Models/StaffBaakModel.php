@@ -14,12 +14,12 @@ class StaffBaakModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    #protected $allowedFields = ['name', 'email'];
+    // protected $allowedFields = ['nip', 'email'];
 
-    protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
+    // protected $useTimestamps = true;
+    // protected $createdField  = 'created_at';
+    // protected $updatedField  = 'updated_at';
+    // protected $deletedField  = 'deleted_at';
 
     #protected $validationRules    = [];
     #protected $validationMessages = [];
