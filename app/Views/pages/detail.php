@@ -41,6 +41,7 @@
                 <?php if ($pengajuanDetail['statusskm'] == "Disetujui") { ?>
                     <button type="hidden" class="but" data-toggle="modal" data-target="#disetujuiModal"></button>
 
+<<<<<<< HEAD
 
                 <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
                     <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
@@ -60,6 +61,8 @@
                 </div>
             </footer>
             <!-- End of Footer -->
+=======
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
         </div>
         <!-- End of Content Wrapper -->
     </div>

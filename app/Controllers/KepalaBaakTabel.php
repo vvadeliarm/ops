@@ -54,6 +54,8 @@ class KepalaBaakTabel extends BaseController
 
     public function detail($idpengajuan)
     {
+        $session = session();
+        $nip = $session->get('nip');
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
         $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
         // dd($surat);
@@ -181,5 +183,55 @@ class KepalaBaakTabel extends BaseController
             // ];
             // return view('pages/kbaakdetail', $data);
         }
+    }
+
+    public function timestamp($idpengajuan)
+    {
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+        $this->kepalaBaakModel->save([
+            'nip' => $kbaak['nip'],
+            'nama' => $kbaak['nama'],
+            'email' => $kbaak['email'],
+            'password' => $kbaak['password'],
+            'ttd' => $kbaak['ttd'],
+            'cap' => $kbaak['cap']
+        ]);
+        // dd($surat);
+        // $data = [
+        //     'pengajuanDetail' => $pengajuanDetail,
+        //     'surat' => $surat
+        //     // 'validation' => \config\Services::validation()
+        // ];
+        // view('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
+        // view("CRUDStatus");
+        return redirect()->to('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
+    }
+
+    public function timestamp2($idpengajuan)
+    {
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+        $this->kepalaBaakModel->save([
+            'nip' => $kbaak['nip'],
+            'nama' => $kbaak['nama'],
+            'email' => $kbaak['email'],
+            'password' => $kbaak['password'],
+            'ttd' => $kbaak['ttd'],
+            'cap' => $kbaak['cap']
+        ]);
+        // dd($surat);
+        // $data = [
+        //     'pengajuanDetail' => $pengajuanDetail,
+        //     'surat' => $surat
+        //     // 'validation' => \config\Services::validation()
+        // ];
+        // view('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
+        // view("CRUDStatus");
+        return redirect()->to('/CRUDStatus/tolakStatusSkm/' . $pengajuanDetail['idpengajuan']);
     }
 }

@@ -41,6 +41,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
+$routes->get('/KepalaBaakTabel/timestamp/(:segment)', 'KepalaBaakTabel::timestamp/$1');
+$routes->get('/KepalaBaakTabel/timestamp2/(:segment)', 'KepalaBaakTabel::timestamp2/$1');
 $routes->get('/HomeStaffBaakTabel/detail/(:segment)', 'HomeStaffBaakTabel::detail/$1');
 $routes->get('/TolakKbaakTabel/(:segment)', 'TolakKbaakTabel::detail/$1');
 $routes->get('/TerimaKbaakTabel/(:segment)', 'TerimaKbaakTabel::detail/$1');
@@ -52,8 +54,10 @@ $routes->get('/CRUDPengajuan/teruskanPengajuanStaff/(:segment)', 'CRUDPengajuan:
 $routes->get('/CRUDPengajuan/tangguhkanPengajuanStaff/(:segment)', 'CRUDPengajuan::tangguhkanPengajuanStaff/$1');
 $routes->get('/CRUDPengajuan/tolakPengajuanStaff/(:segment)', 'CRUDPengajuan::tolakPengajuanStaff/$1');
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
+$routes->get('/CRUDStatus/terimaStatusSkm/(:segment)', 'CRUDStatus::terimaStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
+<<<<<<< HEAD
 
 // $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 
@@ -62,6 +66,14 @@ $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/
 $routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
 $routes->get('/view-pdf/(:segment)','PengajuanTabel::viewPDF/$1');
 
+=======
+$routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
+$routes->get('export-pdf', 'PengajuanTabel::exportPDF');
+$routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
+$routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
+$routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
+$routes->get('/export-pdf/(:segment)', 'PengajuanTabel::exportPDF/$1');
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------

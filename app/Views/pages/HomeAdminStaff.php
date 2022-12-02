@@ -49,10 +49,17 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+<<<<<<< HEAD
         <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
+=======
+          <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+          </a>
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
       </li>
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
@@ -222,8 +229,15 @@
             <div class="col-lg-6">
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
+<<<<<<< HEAD
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+=======
+                  <<<<<<< HEAD <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  =======
+                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
                 </div>
               </div>
             </div>
@@ -265,8 +279,15 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<<<<<<< HEAD
           
           <a class="btn btn-primary" href="/login/logout">Logout</a>
+=======
+          <<<<<<< HEAD <a class="btn btn-primary" href="login.html">Logout</a>
+            =======
+            <a class="btn btn-primary" href="/login/logout">Logout</a>
+            >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+>>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
         </div>
       </div>
     </div>

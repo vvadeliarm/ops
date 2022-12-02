@@ -64,7 +64,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
                     <h5 class="modal-title">PENOLAKAN SKM</h5>
-                    <a href="/KepalaBaakTabel/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">X</button></a>
+                    <a href="/KepalaBaakTabel/timestamp2/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">X</button></a>
                 </div>
                 <!-- <div class="modal-body" style=" color: black; ">
                     <form form action="/CRUDAlasan/insertAlasan/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" enctype="multipart/form-data" class="row g-3">
