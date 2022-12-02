@@ -41,6 +41,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
+$routes->get('/KepalaBaakTabel/TimeStamp/(:segment)', 'KepalaBaakTabel::TimeStamp/$1');
 $routes->get('/HomeStaffBaakTabel/detail/(:segment)', 'HomeStaffBaakTabel::detail/$1');
 $routes->get('/TolakKbaakTabel/(:segment)', 'TolakKbaakTabel::detail/$1');
 $routes->get('/TerimaKbaakTabel/(:segment)', 'TerimaKbaakTabel::detail/$1');
@@ -50,17 +51,13 @@ $routes->get('/CRUDPengajuan/updatePengajuan/(:segment)', 'CRUDPengajuan::update
 $routes->get('/CRUDStatus/updateStatusSkm/(:segment)', 'CRUDStatus::updateStatusSkm/$1');
 $routes->get('/CRUDAlasan/insertAlasan/(:segment)', 'CRUDAlasan::insertAlasan/$1');
 $routes->get('/Previewpdf/(:segment)', 'Previewpdf::Previewpdf/$1');
-<<<<<<< HEAD
-// $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
-=======
-<<<<<<< HEAD
+
+//$routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
+
 $routes->get('export-pdf', 'PengajuanTabel::exportPDF');
-=======
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 
->>>>>>> 42dae27e812c973b7e5e443744ccdb268db99e6c
->>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -21,14 +21,25 @@ class KepalaBaakTabel extends BaseController
     {
         $session = session();
         $nip = $session->get('nip');
+        $keyword = '';
 
         if ($nip != NULL) {
+
+            $keyword = $this->request->getGet('keyword');
+            if ($keyword) {
+                $pengajuan = $this->pengajuanModel->cari($keyword);
+            } else {
+                $pengajuan = $this->pengajuanModel->findAll();
+            }
             $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
-            $pengajuan = $this->pengajuanModel->findAll();
-            // dd($kbaak);
+            // $pengajuan = $this->pengajuanModel->findAll();
+            // $pengajuan2 = $cari;
+            // dd($cari);
+
             $data = [
                 'kbaak' => $kbaak,
-                'pengajuan' => $pengajuan
+                'pengajuan' => $pengajuan,
+                'keyword' => $keyword
             ];
             return view('pages/SkmKepala', $data);
         } else {
@@ -53,6 +64,19 @@ class KepalaBaakTabel extends BaseController
     }
 
     public function detail($idpengajuan)
+    {
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        // dd($surat);
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
+            // 'validation' => \config\Services::validation()
+        ];
+        return view('pages/kbaakdetail', $data);
+    }
+
+    public function TimeStamp($idpengajuan)
     {
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
         $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
