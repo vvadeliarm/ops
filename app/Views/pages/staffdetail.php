@@ -75,27 +75,27 @@
                                 <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed>
                             <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                                 <i class="fas fa-fw fa-file"></i>
-                                <span><?= $surat['nama surat']; ?></span>
+                                <span>< $surat['nama surat']; ?></span>
                                 <i class="fas fa-fw fa-eye"></i>
                             </a>
                         <?php } ?>
                     </div> -->
 
-                                            <div class="col-md-12">
+                                            <!-- <div class="col-md-12">
                                                 <label for="formFile" class="form-label">File SKM</label>
                                                 <br>
                                                 <a href="/Previewpdf/previewpdfSkm/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                                                     <i class="fas fa-fw fa-file"></i>
-                                                    <span><?= $surat['nama surat']; ?></span>
+                                                    <span>< $surat['nama surat']; ?></span>
                                                     <i class="fas fa-fw fa-eye"></i>
                                                 </a>
-                                            </div>
+                                            </div> -->
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
+                                    <!-- <div class="modal-footer">
 
-                                        <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
-                                    </div>
+                                        <a href="/Previewpdf/download/< $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>

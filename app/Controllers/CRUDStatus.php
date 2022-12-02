@@ -119,7 +119,8 @@ class CRUDStatus extends BaseController
                 'namafile' => $namaFile,
                 'namakbaak' => $namaKbaak,
                 'nipkbaak' => $nip,
-                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak'],
+                'alasan' => $this->request->getVar('alasan')
 
             ]);
         } else {
@@ -142,7 +143,8 @@ class CRUDStatus extends BaseController
                 'tujuan' => $pengajuanDetail['tujuan'],
                 'namakbaak' => $namaKbaak,
                 'nipkbaak' => $nip,
-                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak'],
+                'alasan' => $this->request->getVar('alasan')
             ]);
         }
 
