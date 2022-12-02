@@ -21,14 +21,25 @@ class KepalaBaakTabel extends BaseController
     {
         $session = session();
         $nip = $session->get('nip');
+        $keyword = '';
 
         if ($nip != NULL) {
+
+            $keyword = $this->request->getGet('keyword');
+            if ($keyword) {
+                $pengajuan = $this->pengajuanModel->cari($keyword);
+            } else {
+                $pengajuan = $this->pengajuanModel->findAll();
+            }
             $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
-            $pengajuan = $this->pengajuanModel->findAll();
-            // dd($kbaak);
+            // $pengajuan = $this->pengajuanModel->findAll();
+            // $pengajuan2 = $cari;
+            // dd($cari);
+
             $data = [
                 'kbaak' => $kbaak,
-                'pengajuan' => $pengajuan
+                'pengajuan' => $pengajuan,
+                'keyword' => $keyword
             ];
             return view('pages/SkmKepala', $data);
         } else {
@@ -67,6 +78,19 @@ class KepalaBaakTabel extends BaseController
         return view('pages/kbaakdetail', $data);
     }
 
+<<<<<<< HEAD
+    public function TimeStamp($idpengajuan)
+    {
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        // dd($surat);
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
+            // 'validation' => \config\Services::validation()
+        ];
+        return view('pages/kbaakdetail', $data);
+=======
     public function updateTTD()
     {
         $nip = $this->request->getVar('nip');
@@ -233,5 +257,6 @@ class KepalaBaakTabel extends BaseController
         // view('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
         // view("CRUDStatus");
         return redirect()->to('/CRUDStatus/tolakStatusSkm/' . $pengajuanDetail['idpengajuan']);
+>>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
     }
 }

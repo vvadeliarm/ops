@@ -73,7 +73,11 @@
 
                 </div>
                 <div class="modal-footer">
+<<<<<<< HEAD
+                    <form form action="/KepalaBaakTabel/TimeStamp/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
+=======
                     <form form action="/KepalaBaakTabel/timestamp/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
+>>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nama']; ?>" name="nama" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nim']; ?>" name="nim" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kelas']; ?>" name="kelas" aria-label="readreadonly input example" readonly>
