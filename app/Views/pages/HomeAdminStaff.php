@@ -46,12 +46,12 @@
           <span>Home</span></a>
       </li>
 
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
+<<<<<<< HEAD
 
 
       </li>
@@ -60,7 +60,29 @@
             <span>Layanan SKM</span>
           </a> -->
 
+=======
       </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+           <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+<<<<<<< HEAD
+          </a>
+      </li> -->
+=======
+        </a>
+        
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Layanan SKM</span>
+        </a>
+     
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+      </li>
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
@@ -219,9 +241,17 @@
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+<<<<<<< HEAD
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+=======
+
+=======
+                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
                 </div>
               </div>
             </div>
@@ -263,11 +293,18 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<<<<<<< HEAD
           <a class="btn btn-primary" href="/login/logout">Logout</a>
           <a class="btn btn-primary" href="login.html">Logout</a>
 
           <a class="btn btn-primary" href="/login/logout">Logout</a>
 
+=======
+
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+           
+            
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
         </div>
       </div>
     </div>

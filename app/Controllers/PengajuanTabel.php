@@ -82,6 +82,21 @@ class PengajuanTabel extends BaseController
         return view('pages/detail', $data);
     }
 
+    public function detailSetuju($idpengajuan)
+    {
+        session();
+        // $session = session();
+        // $nim = $session->get('nim');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat,
+            'validation' => \config\Services::validation()
+        ];
+        return view('pages/arsip', $data);
+    }
+
     public function perbaikiSKM($idpengajuan)
     {
         $perbaiki = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
@@ -120,7 +135,11 @@ class PengajuanTabel extends BaseController
         $options->set('chroot', realpath(''));
         $options->setIsRemoteEnabled(true);
 
+<<<<<<< HEAD
         // $options->isHtml5ParserEnabled(true);
+=======
+        $options->isHtml5ParserEnabled(true);
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
         $view = view('pages/surat', $data);
 
         // instantiate and use the dompdf class
@@ -136,6 +155,10 @@ class PengajuanTabel extends BaseController
         $dompdf->render();
 
         // Output the generated PDF to Browser
+<<<<<<< HEAD
+        // dd($dompdf->stream());
+        $dompdf->stream("surat-skm", array("Attachment" => false));
+=======
         $dompdf->stream();
         // $dompdf->stream("surat-skm", array("Attachment"=>false));
         // return view('pages/surat', $data);
@@ -178,7 +201,12 @@ class PengajuanTabel extends BaseController
 
         // Output the generated PDF to Browser
         // $dompdf->stream();
+<<<<<<< HEAD
         $dompdf->stream("surat-skm", array("Attachment" => false));
+=======
+        $dompdf->stream("surat-skm", array("Attachment"=>false));
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
         // return view('pages/surat', $data);
     }
 }

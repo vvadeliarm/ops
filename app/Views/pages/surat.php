@@ -227,7 +227,12 @@
 	<table width="625" style="line-height: 1.5em;font-family:Calibri, 'Trebuchet MS', sans-serif">
 		<tr>
 			<td width="200"><br><br><br><br></td>
+<<<<<<< HEAD
 			<td class="text" align="center">Jakarta, <?= $pengajuanDetail['tanggalacckbaak']; ?><br><br>
+=======
+			<?php $M = "januari"; ?>
+			<td class="text" align="center">Jakarta, <?= strftime('%d %B %Y', strtotime($pengajuanDetail['tanggalacckbaak'])); ?><br><br>
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
 				Politeknik Statistika STIS,
 				<br>
 				Kepala Bagian Administrasi <br> Akademik dan Kemahasiswaan,

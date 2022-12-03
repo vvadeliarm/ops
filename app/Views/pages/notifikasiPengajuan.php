@@ -40,7 +40,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" margin:0px;>
+                    <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end" margin:0px;> -->
+                    <div class="modal-footer">
                         <a href="javascript:window.history.go(-1);"><button type="button" class="btn btn-primary center-block" style="background-color: green;">OK</button></a>
                     </div>
                 </div>

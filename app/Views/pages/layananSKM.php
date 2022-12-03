@@ -25,6 +25,15 @@
         <div id="content">
             <!-- Topbar -->
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <!-- <div class="navbar-nav ms-auto">
+                        <div><a class="nav-link active" aria-current="page" href="/">Beranda</a></div>
+
+                    </div> -->
+                    <a class="nav-link active" href="/">
+                        <i class="fas fa-fw fa-home"></i>
+                        <span>Home</span></a>
+                </div>
                 <!-- Sidebar Toggle (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <i class="fa fa-bars"></i>
@@ -133,12 +142,12 @@
                 <div class="row text-center mb-5">
                     <div class="col">
                         <h1 style="color: white ; text-align: center;"> LAYANAN SKM</h1>
-                        <p style="color: white; text-align: center;">
+                        <p style="color: white; text-align: center; margin-left: 180px;margin-right: 180px">
                             Surat Keterangan Mahasiswa (SKM) merupakan salah satu jenis layanan kemahasiswaan yang dapat diakses mahasiswa yang bertujuan untuk legalitas dokumen dan kegiatan sesuai administrasi Politeknik Statistika STIS
                         </p>
-                        <svg id="tentang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 10">
+                        <!-- <svg id="tentang" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 10">
                             <path fill="#ffff" fill-opacity="1"></path>
-                        </svg>
+                        </svg> -->
                     </div>
                 </div>
 
@@ -146,15 +155,19 @@
 
             <!-- Akhir Slider-->
             <section>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-right: 180px;">
+
                     <a href="/MahasiswaTabel?/<?= $akun['nim']; ?>"><button class="btn btn-primary" type="button">+ Ajukan SKM</button></a>
                 </div>
             </section>
-
+            <br>
             <div class="container" style="background-color:white; color: black ;">
                 <div class="row text-center mb-5">
                     <div class="col">
+                        <p>
                         <h3>Daftar SKM </h3>
+                        </p>
+
                         <?php if (session()->getFlashdata("pesan")) : ?>
                             <div class="alert alert-success" role="alert">
                                 <?= session()->getFlashdata("pesan") ?>
@@ -189,7 +202,7 @@
                                         <td><?= $p['statusskm']; ?></td>
                                         <?php
                                         if ($p['statusskm'] == "Disetujui") { ?>
-                                            <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
+                                            <td><a href="/PengajuanTabel/detailSetuju/<?= $pengajuanDetail['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
                                         <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                             <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></a></td>
                                         <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>

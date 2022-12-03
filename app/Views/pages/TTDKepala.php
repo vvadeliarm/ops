@@ -215,7 +215,7 @@
                         <div class="row justify-content-center" style=" color: rgb(255, 255, 255) ;">
                             <div class="col-md-6">
                                 <form form action="/KepalaBaakTabel/updateTTD/<?= $staff['nip']; ?>" enctype="multipart/form-data" method="POST" class="row g-3">
-                                    <div class="mb-3">
+                                    <div class="mb-3" style="margin-right:10% ;">
                                         <label for="nama-kepala">NIP</label>
                                         <input type="text" class="form-control" id="nama-kepala" name="nip" placeholder="NIP Kepala" required>
                                     </div>
@@ -231,11 +231,14 @@
                                         <label for="cap">Input Cap</label>
                                         <input type="file" class="form-control-file" id="cap" name="cap">
                                     </div>
-                                    <div class="mb-3">
+                                    <br>
+                                    <div class="col-md-6" style="margin-left: -3%;">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
+
                                 </form>
-                                <p>Form ini diperlukan ketika terjadi perubahan kepala BAAK sehingga memerlukan data diri serta tanda tangan dan cap yang baru (disesuaikan)</p>
+                                <br>
+                                <p style="margin-left: -3%;">Form ini diperlukan ketika terjadi perubahan kepala BAAK sehingga memerlukan data diri serta tanda tangan dan cap yang baru (disesuaikan)</p>
                             </div>
                         </div>
                     </div>

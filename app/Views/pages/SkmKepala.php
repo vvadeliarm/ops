@@ -201,18 +201,33 @@
                     <div class="container" style="background-color:white; color: black ;">
                         <div class="row text-center mb-5">
                             <div class="col">
+                                <p>
                                 <h3>Daftar SKM </h3>
+                                </p>
+
 
                             </div>
 
                             <br>
                             <div class="dropdown">
+<<<<<<< HEAD
                                 <div class="d-grid gap-
                                 2 d-md-flex justify-content-md-end">
+=======
+<<<<<<< HEAD
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
+                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
+                                        <span class="caret"></span></button>
+                                    <ul class="dropdown-menu">
+                                        <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+=======
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
                                     <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button> -->
                                     <!-- <ul class="dropdown-menu">
                                         //<input class="form-control" id="myInput" type="text" placeholder="Search..">
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
                                         <li><a href="#">Semua</a></li>
                                         <li><a href="#">Diajukan</a></li>
                                         <li><a href="#">Proses</a></li>

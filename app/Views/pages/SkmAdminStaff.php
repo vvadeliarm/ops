@@ -210,13 +210,17 @@
           <div class="container" style="background-color:white; color: black ;">
             <div class="row text-center mb-5">
               <div class="col">
+                <p>
                 <h3>Daftar SKM </h3>
+                </p>
+
 
               </div>
 
               <br>
+
               <div class="dropdown">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                     <span class="caret"></span></button>
                   <ul class="dropdown-menu">
