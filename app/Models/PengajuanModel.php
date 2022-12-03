@@ -49,8 +49,18 @@ class PengajuanModel extends Model
     function cari($keyword)
     {
         // dd($this->pengajuanModel->table('pengajuan'));
-        $builder = $this->db->query("SELECT * FROM pengajuan WHERE nama Like '%$keyword%'")->getResultArray();
+        $builder = $this->db->query("SELECT * FROM pengajuan WHERE nama Like '%$keyword%' OR nim Like '%$keyword%'")->getResultArray();
         // dd($builder);
+        return $builder;
+    }
+
+    function filter()
+    {
+        $katakunci = 'Disetujui';
+        // dd($this->pengajuanModel->table('pengajuan'));
+        // $builder = $db->table('pengajuan')->select('statusskm');
+        $builder = $this->db->query("SELECT * FROM pengajuan GROUP BY statusskm")->getResultArray();
+
         return $builder;
     }
 }

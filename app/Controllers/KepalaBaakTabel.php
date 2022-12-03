@@ -32,10 +32,10 @@ class KepalaBaakTabel extends BaseController
                 $pengajuan = $this->pengajuanModel->findAll();
             }
             $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
-            // $pengajuan = $this->pengajuanModel->findAll();
-            // $pengajuan2 = $cari;
-            // dd($cari);
+            $filter = $this->pengajuanModel->filter();
+            // $filter = $this->->group_by('statusskm')->get('idPengajuan')->result();
 
+            // dd($filter);
             $data = [
                 'kbaak' => $kbaak,
                 'pengajuan' => $pengajuan,
@@ -63,6 +63,21 @@ class KepalaBaakTabel extends BaseController
         }
     }
 
+    // public function custom_filter()
+    // {
+    //     $db = db_connect();
+    //     $builder = $db->table('pengajuan')->select('statusskm');
+
+    //     return PengajuanModel::
+
+    //         ->filter(function ($builder, $request) {
+
+    //             if ($request->country)
+    //                 $builder->where('country', $request->country);
+    //         })
+    //         ->toJson();
+    // }
+
     public function detail($idpengajuan)
     {
         $session = session();
@@ -78,19 +93,18 @@ class KepalaBaakTabel extends BaseController
         return view('pages/kbaakdetail', $data);
     }
 
-<<<<<<< HEAD
-    public function TimeStamp($idpengajuan)
-    {
-        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
-        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
-        // dd($surat);
-        $data = [
-            'pengajuanDetail' => $pengajuanDetail,
-            'surat' => $surat
-            // 'validation' => \config\Services::validation()
-        ];
-        return view('pages/kbaakdetail', $data);
-=======
+    // public function TimeStamp($idpengajuan)
+    // {
+    //     $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+    //     $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+    //     // dd($surat);
+    //     $data = [
+    //         'pengajuanDetail' => $pengajuanDetail,
+    //         'surat' => $surat
+    //         // 'validation' => \config\Services::validation()
+    //     ];
+    //     return view('pages/kbaakdetail', $data);
+    // }
     public function updateTTD()
     {
         $nip = $this->request->getVar('nip');
@@ -224,11 +238,11 @@ class KepalaBaakTabel extends BaseController
             'cap' => $kbaak['cap']
         ]);
         // dd($surat);
-        // $data = [
-        //     'pengajuanDetail' => $pengajuanDetail,
-        //     'surat' => $surat
-        //     // 'validation' => \config\Services::validation()
-        // ];
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail
+            // 'surat' => $surat
+            // 'validation' => \config\Services::validation()
+        ];
         // view('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
         // view("CRUDStatus");
         return redirect()->to('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
@@ -257,6 +271,5 @@ class KepalaBaakTabel extends BaseController
         // view('/CRUDStatus/terimaStatusSkm/' . $pengajuanDetail['idpengajuan']);
         // view("CRUDStatus");
         return redirect()->to('/CRUDStatus/tolakStatusSkm/' . $pengajuanDetail['idpengajuan']);
->>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
     }
 }

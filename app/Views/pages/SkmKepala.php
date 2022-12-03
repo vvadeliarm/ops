@@ -207,7 +207,8 @@
 
                             <br>
                             <div class="dropdown">
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <div class="d-grid gap-
+                                2 d-md-flex justify-content-md-end">
                                     <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button> -->
                                     <!-- <ul class="dropdown-menu">
@@ -220,8 +221,8 @@
 
                                     </ul> -->
                                     <select id="statusskm">
-                                        <!-- <option value="">Pilih Status SKM</option> -->
-                                        <option value="Semua">Semua</option>
+                                        <option value="">Pilih Status SKM</option>
+                                        <!-- <option value="Semua">Semua</option> -->
                                         <option value="Disetujui">Disetujui</option>
                                         <option value="Ditolak">Ditolak</option>
                                         <option value="Proses">Proses</option>
@@ -241,7 +242,6 @@
                 <th scope=" col">Dokumen</th>
                                 <th scope="col">Tanggal dibuat</th>
                                 <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NIM</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Detail</th>
                                 </tr>
@@ -254,14 +254,13 @@
                                             <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                                             <td><?= $p['tanggalpengajuan']; ?></td>
                                             <td><?= $p['nama']; ?></td>
-                                            <td><?= $p['nim']; ?></td>
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
-                                            <?php } elseif ($p['statusskm'] == "Diteruskan") { ?>
+                                            <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
                                             <?php } else { ?>
                                                 <td></td>

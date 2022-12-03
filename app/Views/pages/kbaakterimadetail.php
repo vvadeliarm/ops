@@ -73,31 +73,28 @@
 
                 </div>
                 <div class="modal-footer">
-<<<<<<< HEAD
                     <form form action="/KepalaBaakTabel/TimeStamp/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
-=======
-                    <form form action="/KepalaBaakTabel/timestamp/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
->>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nama']; ?>" name="nama" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nim']; ?>" name="nim" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kelas']; ?>" name="kelas" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['prodi']; ?>" name="prodi" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tempattanggallahir']; ?>" name="tempattanggallahir" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['diploma']; ?>" name="diploma" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tahunakademik']; ?>" name="tahunakademik" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['status']; ?>" name="status" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kategori']; ?>" name="kategori" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tujuan']; ?>" name="tujuan" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['fileupload']; ?>" name="fileupload" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['namafile']; ?>" name="namafile" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $kbaakDetail['nama']; ?>" name="namakbaak" aria-label="readreadonly input example" readonly>
-                        <input class="form-control" type="hidden" value="<?= $kbaakDetail['nip']; ?>" name="nipkbaak" aria-label="readreadonly input example" readonly>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit" style="background-color: green;">Terima</button>
+                        <form form action="/KepalaBaakTabel/timestamp/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nama']; ?>" name="nama" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nim']; ?>" name="nim" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kelas']; ?>" name="kelas" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['prodi']; ?>" name="prodi" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tempattanggallahir']; ?>" name="tempattanggallahir" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['diploma']; ?>" name="diploma" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tahunakademik']; ?>" name="tahunakademik" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['status']; ?>" name="status" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['kategori']; ?>" name="kategori" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['tujuan']; ?>" name="tujuan" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['fileupload']; ?>" name="fileupload" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['namafile']; ?>" name="namafile" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $kbaakDetail['nama']; ?>" name="namakbaak" aria-label="readreadonly input example" readonly>
+                            <input class="form-control" type="hidden" value="<?= $kbaakDetail['nip']; ?>" name="nipkbaak" aria-label="readreadonly input example" readonly>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit" style="background-color: green;">Terima</button>
 
-                        </div>
-                    </form>
+                            </div>
+                        </form>
                 </div>
             </div>
         </div>
