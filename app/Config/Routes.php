@@ -69,37 +69,24 @@ $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 
 // $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 
-<<<<<<< HEAD
 
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)', 'PengajuanTabel::exportPDF/$1');
 $routes->get('/view-pdf/(:segment)', 'PengajuanTabel::viewPDF/$1');
 
-=======
-
-$routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
-$routes->get('/export-pdf/(:segment)','PengajuanTabel::exportPDF/$1');
-$routes->get('/view-pdf/(:segment)','PengajuanTabel::viewPDF/$1');
-
->>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
 $routes->get('/Previewpdf/download/(:segment)', 'Previewpdf::Previewpdf/download/$1');
 
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
-<<<<<<< HEAD
+
 setlocale(LC_TIME, 'IND');
 
 
-=======
+
 $routes->get('/export-pdf/(:segment)', 'PengajuanTabel::exportPDF/$1');
-<<<<<<< HEAD
 setlocale(LC_TIME, 'IND');
-=======
->>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
->>>>>>> 64635772f322f09927b56665dd5f7929f870ff24
->>>>>>> eef24c722d94d3abf02748f56f93cd100e14439d
->>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------
