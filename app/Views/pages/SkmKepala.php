@@ -211,10 +211,13 @@
                             <br>
                             <div class="dropdown">
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
                                 <div class="d-grid gap-
                                 2 d-md-flex justify-content-md-end">
 =======
 <<<<<<< HEAD
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button>
@@ -234,10 +237,17 @@
                                         <li><a href="#">Disetujui</a></li>
                                         <li><a href="#">Ditolak</a></li>
 
+<<<<<<< HEAD
+                                    </ul>
+                                    <select id="statusskm">
+                                        <!-- <option value="">Pilih Status SKM</option> -->
+                                        <option value="Semua">Semua</option>
+=======
                                     </ul> -->
                                     <select id="statusskm">
                                         <option value="">Pilih Status SKM</option>
                                         <!-- <option value="Semua">Semua</option> -->
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                                         <option value="Disetujui">Disetujui</option>
                                         <option value="Ditolak">Ditolak</option>
                                         <option value="Proses">Proses</option>
@@ -272,7 +282,7 @@
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
-                                                <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
+                                                <td><a href="/HomeKepalaBaakTabel/detailSetuju/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>

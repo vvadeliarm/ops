@@ -92,8 +92,16 @@
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['fileupload']; ?>" name="fileupload" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['namafile']; ?>" name="namafile" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
+                        <div class="form-group">
+                            <!-- <label>Receiver Email</label> -->
+                            <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                        </div>
                         Alasan :
                         <textarea class="form-control" rows="5" name="alasan" required></textarea>
+<<<<<<< HEAD
+                        
+=======
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 </div>
                 <!-- <div class="col-12"> -->
                 <div class="modal-footer">

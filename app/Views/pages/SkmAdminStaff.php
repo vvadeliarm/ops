@@ -259,7 +259,7 @@
                       <td><?= $p['statusskm']; ?></td>
                       <?php
                       if ($p['statusskm'] == "Disetujui") { ?>
-                        <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success">Lihat</button></a></td>
+                        <td><a href="/HomeStaffBaakTabel/detailSetuju/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success">Lihat</button></a></td>
                       <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                         <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger">Lihat</button></a></td>
                       <?php } elseif (($p['statusskm'] == "Diajukan Kembali") || ($p['statusskm'] == "Diajukan")) { ?>

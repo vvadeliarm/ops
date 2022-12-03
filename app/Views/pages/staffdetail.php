@@ -44,6 +44,9 @@
                                 </svg>
                     </section>
                     <!-- Akhir Slider-->
+<<<<<<< HEAD
+                    <?php if ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+=======
 
                     <?php if ($pengajuanDetail['statusskm'] == "Disetujui") { ?>
                         <button type="hidden" class="but" data-toggle="modal" data-target="#disetujuiModal"></button>
@@ -109,6 +112,7 @@
 >>>>>>> eb94447c862f8375fb27419a7802a103fe729967
 >>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
                     <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                         <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
                     <?php } elseif (($pengajuanDetail['statusskm'] == "Diajukan") || ($pengajuanDetail['statusskm'] == "Diajukan Kembali")) { ?>
                         <button type="hidden" class="but" data-toggle="modal" data-target="#prosesModal"></button>
@@ -253,6 +257,8 @@
                             <div class="col-12">
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
+                            </div>
+                            <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit" style="background-color: green;">Teruskan SKM</button>
                             </div>
                         </form>
@@ -522,11 +528,20 @@
                     <div class="modal-body" style=" color: black; ">
 
                         <form form action="/CRUDPengajuan/tangguhkanPengajuanStaff/<?= $pengajuanDetail['idpengajuan']; ?>">
+                            <div class="form-group">
+                                <!-- <label>Receiver Email</label> -->
+                                <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                            </div>
                             <div class="col-12">
                                 Alasan :
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
+<<<<<<< HEAD
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button>
+                                </div>
+=======
 <<<<<<< HEAD
                                 <div><button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button></div>
 =======
@@ -534,6 +549,7 @@
                                     <button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button>
                                 </div>
 >>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
 
                             </div>
                         </form>
@@ -552,11 +568,19 @@
                     </div>
                     <div class="modal-body" style=" color: black; ">
                         <form form action="/CRUDPengajuan/tolakPengajuanStaff/<?= $pengajuanDetail['idpengajuan']; ?>">
+                            <div class="form-group">
+                                <!-- <label>Receiver Email</label> -->
+                                <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                            </div>
                             <div class="col-12">
                                 Alasan :
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
+<<<<<<< HEAD
+
+                            </div>
+=======
 <<<<<<< HEAD
                                 <div><button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button></div>
 
@@ -564,12 +588,16 @@
 =======
 
                             </div>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                             <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button>
                             </div>
 
 
+<<<<<<< HEAD
+=======
 >>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                         </form>
 
 

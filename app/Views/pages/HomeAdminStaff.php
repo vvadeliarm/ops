@@ -52,6 +52,18 @@
           <span>Layanan SKM</span>
         </a>
 <<<<<<< HEAD
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+          </a>
+      </li> -->
+=======
+<<<<<<< HEAD
 
 
       </li>
@@ -62,6 +74,7 @@
 
 =======
       </li>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
 
       <!-- Nav Item - Pages Collapse Menu -->
       <!-- <li class="nav-item">
@@ -242,6 +255,9 @@
                 <div class="card-body">
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
                   <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
@@ -252,6 +268,7 @@
                   
 >>>>>>> eb94447c862f8375fb27419a7802a103fe729967
 >>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 </div>
               </div>
             </div>

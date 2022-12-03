@@ -111,6 +111,22 @@ class HomeStaffBaakTabel extends BaseController
         return view('pages/staffdetail', $data);
     }
 
+    public function detailSetuju($idpengajuan)
+    {
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $staff = $this->staffBaakModel->where(['nip' => $nip])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'surat' => $surat,
+            'pengajuanDetail' => $pengajuanDetail,
+            'staff' => $staff
+            // 'validation' => \config\Services::validation()
+        ];
+        return view('pages/arsip', $data);
+    }
+
     public function ttdKepala()
     {
         $session = session();

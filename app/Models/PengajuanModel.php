@@ -31,6 +31,8 @@ class PengajuanModel extends Model
     #protected $validationRules    = [];
     #protected $validationMessages = [];
     #protected $skipValidation     = false;
+<<<<<<< HEAD
+=======
 
     // public function __construct()
     // {
@@ -46,6 +48,7 @@ class PengajuanModel extends Model
     //     // $builder->like('nama', $keyword);
     //     return $builder;
 
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
     function cari($keyword)
     {
         // dd($this->pengajuanModel->table('pengajuan'));
@@ -53,6 +56,8 @@ class PengajuanModel extends Model
         // dd($builder);
         return $builder;
     }
+<<<<<<< HEAD
+=======
 
     function filter()
     {
@@ -63,4 +68,5 @@ class PengajuanModel extends Model
 
         return $builder;
     }
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
 }

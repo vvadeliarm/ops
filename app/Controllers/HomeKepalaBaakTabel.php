@@ -49,4 +49,19 @@ class HomeKepalaBaakTabel extends BaseController
             // echo '</script>'; 
         }
     }
+
+    public function detailSetuju($idpengajuan)
+    {
+        $session = session();
+        $nip = $session->get('nip');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+        // $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'kbaak' => $kbaak
+            // 'validation' => \config\Services::validation()
+        ];
+        return view('pages/arsipKepala', $data);
+    }
 }

@@ -52,6 +52,11 @@
 
 =======
 <<<<<<< HEAD
+            </section>
+            <!-- Akhir tabel -->
+
+=======
+<<<<<<< HEAD
 
                 <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
                     <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
@@ -63,6 +68,7 @@
             <!-- Akhir tabel -->
 
 >>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -74,9 +80,12 @@
             <!-- End of Footer -->
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 850039ccdad7d6389bd9f2df2d437ca551c6f721
 >>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
         </div>
         <!-- End of Content Wrapper -->
     </div>
@@ -111,9 +120,17 @@
                                     <i class="fas fa-fw fa-eye"></i>
                                 </a>
                             </div>
+<<<<<<< HEAD
+                            <div class="modal-footer">
+                                <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-primary">Export PDF</a>
+                            </div>
+=======
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                         </div>
 
                 </div>
+<<<<<<< HEAD
+=======
                 <div class="modal-footer">
                     <!-- <button href="/export-pdf" class="btn btn-primary">Export PDF</button> -->
                     <!-- <button type="button" class="btn btn-primary">Export PDF</button> -->
@@ -121,6 +138,7 @@
                     <!-- <a href="/export-pdf" class="btn btn-warning">Export PDF</a> -->
                 </div>
                 </form>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
             </div>
 
 
@@ -175,19 +193,24 @@
                             <label for="alasan" class="form-label">Alasan</label>
                             <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $pengajuanDetail['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
                             <div class="modal-footer">
                                 <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-primary">Export PDF</a>
                             </div>
 =======
                             
 >>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                         </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </div>
+
+
+
 
     <!-- Modal Ditangguhkan -->
     <div class="modal fade" id="ditangguhkanModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

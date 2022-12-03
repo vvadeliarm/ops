@@ -49,23 +49,28 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/HomeKepalaBaakTabel">
+        <a class="nav-link" href="/HomeStaffBaakTabel">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
       </li>
 
       <!-- Nav Item - Layanan SKM -->
       <li class="nav-item">
-        <a class="nav-link" href="/KepalaBaakTabel">
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span></a>
       </li>
 
       <!-- Nav Item - Arsip SKM -->
       <li class="nav-item">
-        <a class="nav-link" href="/arsipSKM">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-folder"></i>
           <span>Arsip SKM</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/HomeStaffBaakTabel/ttdKepala">
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>Tanda Tangan & Data</span></a>
       </li>
 
     </ul>
@@ -176,7 +181,11 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<<<<<<< HEAD
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $staff['nama']; ?></span>
+=======
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $sta['nama']; ?></span>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
               </a>
               <!-- Dropdown - User Information -->
@@ -186,13 +195,8 @@
                                     Profile
                                 </a> -->
                 <div class="dropdown-item">
-                  <p>222011691</p>
-                  <p>3SD2</p>
+                  <p><?= $staff['nip']; ?></p>
                 </div>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -225,15 +229,15 @@
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Nomor Surat</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="B-<?= sprintf("%04d", $pengajuanDetail['idpengajuan']); ?>/02711/KM.<?= date('d/m/Y'); ?> " readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">File Surat</label>
               <div class="col-sm-10">
-                <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a href="/view-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
                   <i class="fas fa-fw fa-file"></i>
-                  <span>SKM0002_Cecep Suharjo.pdf</span>
+                  <span><?= $pengajuanDetail['namafile']; ?></span>
                   <i class="fas fa-fw fa-eye"></i>
                 </a>
               </div>
@@ -252,19 +256,19 @@
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">NIP</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['nipkbaak']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['namakbaak']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tanggal ACC</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= date('j F Y', strtotime($pengajuanDetail['tanggalacckbaak'])); ?>" readonly>
               </div>
             </div>
 
@@ -281,19 +285,19 @@
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">NIP</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['nipoperator']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['namaoperator']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tanggal ACC</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label" readonly>
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= date('j F Y', strtotime($pengajuanDetail['tanggalcekoperator'])); ?>" readonly>
               </div>
             </div>
 
@@ -311,62 +315,62 @@
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">NIM</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['nim']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['nama']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tempat, Tanggal Lahir</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['tempattanggallahir']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Kelas</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['kelas']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Prodi</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['prodi']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Diploma</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['diploma']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Semester</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['semester']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tahun Akademik</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['tahunakademik']; ?>" readonly>
               </div>
             </div>
 
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Status</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['status']; ?>" readonly>
               </div>
             </div>
 
@@ -383,35 +387,40 @@
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">ID Pengajuan</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="SKM<?= sprintf("%03d", $pengajuanDetail['idpengajuan']); ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tanggal Pengajuan</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= date('j F Y', strtotime($pengajuanDetail['tanggalpengajuan'])); ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Kategori</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['kategori']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">Tujuan</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="colFormLabel" placeholder="col-form-label">
+                <input type="email" class="form-control" id="colFormLabel" placeholder="<?= $pengajuanDetail['tujuan']; ?>" readonly>
               </div>
             </div>
             <div class="row mb-3">
               <label for="colFormLabel" class="col-sm-2 col-form-label">File Bukti</label>
               <div class="col-sm-10">
-                <a href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                  <i class="fas fa-fw fa-file"></i>
-                  <span>SKM0002_Cecep Suharjo.pdf</span>
-                  <i class="fas fa-fw fa-eye"></i>
-                </a>
+                <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
+                  <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
+                <?php } else { ?>
+                  <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
+                  <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
+                    <i class="fas fa-fw fa-file"></i>
+                    <span><?= $pengajuanDetail['namafile']; ?></span>
+                    <i class="fas fa-fw fa-eye"></i>
+                  </a>
+                <?php } ?>
               </div>
             </div>
 
@@ -420,6 +429,30 @@
           </div>
       </div>
       </form>
+
+      <!-- Scroll to Top Button-->
+      <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+      </a>
+
+      <!-- Logout Modal-->
+      <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a class="btn btn-primary" href="/login/logout">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- </section> -->
 
@@ -436,14 +469,14 @@
 
 
       <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="/vendor/jquery/jquery.min.js"></script>
+      <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
       <!-- Core plugin JavaScript-->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
       <!-- Custom scripts for all pages-->
-      <script src="js/sb-admin-2.min.js"></script>
+      <script src="/js/sb-admin-2.min.js"></script>
 
 </body>
 

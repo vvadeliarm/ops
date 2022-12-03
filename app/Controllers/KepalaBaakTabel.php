@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\KepalaBaakModel;
 use App\Models\SuratModel;
 use App\Models\PengajuanModel;
+use App\Models\FormModel;
+use CodeIgniter\Controller;
 
 class KepalaBaakTabel extends BaseController
 {
@@ -22,9 +24,13 @@ class KepalaBaakTabel extends BaseController
         $session = session();
         $nip = $session->get('nip');
         $keyword = '';
+<<<<<<< HEAD
+        if ($nip != NULL) {
+=======
 
         if ($nip != NULL) {
 
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
             $keyword = $this->request->getGet('keyword');
             if ($keyword) {
                 $pengajuan = $this->pengajuanModel->cari($keyword);
@@ -32,10 +38,15 @@ class KepalaBaakTabel extends BaseController
                 $pengajuan = $this->pengajuanModel->findAll();
             }
             $kbaak = $this->kepalaBaakModel->where(['nip' => $nip])->first();
+<<<<<<< HEAD
+            // $pengajuan = $this->pengajuanModel->findAll();
+            // dd($kbaak);
+=======
             $filter = $this->pengajuanModel->filter();
             // $filter = $this->->group_by('statusskm')->get('idPengajuan')->result();
 
             // dd($filter);
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
             $data = [
                 'kbaak' => $kbaak,
                 'pengajuan' => $pengajuan,
@@ -225,6 +236,23 @@ class KepalaBaakTabel extends BaseController
 
     public function timestamp($idpengajuan)
     {
+        $to = $this->request->getVar('mailTo');
+        $subject = "SKM Sudah Disetujui";
+        $message = "Selamat Pengajuan Anda Sudah Disetujui Oleh Kepala BAAK. Silahkan Ambil SKM H+1 Setelah Menerima Email Ini";
+
+        $email = \Config\Services::email();
+        $email->setTo($to);
+        $email->setFrom('Anonymous@gmail.com', 'Pengajuan SKM');
+
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        if ($email->send()) {
+            echo 'Email successfully sent';
+        } else {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
+
         $session = session();
         $nip = $session->get('nip');
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
