@@ -56,14 +56,22 @@ class HomeStaffBaakTabel extends BaseController
     {
         $session = session();
         $nip = $session->get('nip');
+        $keyword = '';
 
         if ($nip != NULL) {
             $staff = $this->staffBaakModel->where(['nip' => $nip])->first();
             $pengajuan = $this->pengajuanModel->findAll();
-            // dd($kbaak);
+            $keyword = $this->request->getGet('keyword');
+            if ($keyword) {
+                $pengajuan = $this->pengajuanModel->cari($keyword);
+            } else {
+                $pengajuan = $this->pengajuanModel->findAll();
+            }
+
             $data = [
                 'staff' => $staff,
-                'pengajuan' => $pengajuan
+                'pengajuan' => $pengajuan,
+                'keyword' => $keyword
             ];
             return view('pages/SkmAdminStaff', $data);
         } else {

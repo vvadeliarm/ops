@@ -98,7 +98,10 @@
                         </div>
                         Alasan :
                         <textarea class="form-control" rows="5" name="alasan" required></textarea>
+<<<<<<< HEAD
                         
+=======
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 </div>
                 <!-- <div class="col-12"> -->
                 <div class="modal-footer">

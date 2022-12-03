@@ -202,7 +202,7 @@
                                         <td><?= $p['statusskm']; ?></td>
                                         <?php
                                         if ($p['statusskm'] == "Disetujui") { ?>
-                                            <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
+                                            <td><a href="/PengajuanTabel/detailSetuju/<?= $pengajuanDetail['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Download</button></a></td>
                                         <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                             <td><a href="/PengajuanTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat alasan</button></a></td>
                                         <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>

@@ -51,6 +51,7 @@
           <i class="fas fa-fw fa-folder"></i>
           <span>Layanan SKM</span>
         </a>
+<<<<<<< HEAD
       </li>
 
       <!-- Nav Item - Pages Collapse Menu -->
@@ -61,6 +62,40 @@
             <span>Layanan SKM</span>
           </a>
       </li> -->
+=======
+<<<<<<< HEAD
+
+
+      </li>
+      <!-- <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+          </a> -->
+
+=======
+      </li>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+           <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Layanan SKM</span>
+<<<<<<< HEAD
+          </a>
+      </li> -->
+=======
+        </a>
+        
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Layanan SKM</span>
+        </a>
+     
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+      </li>
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
@@ -82,17 +117,6 @@
             <i class="fa fa-bars"></i>
           </button>
 
-          <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -230,7 +254,21 @@
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+=======
+
+=======
+                   <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+                  
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 </div>
               </div>
             </div>
@@ -272,10 +310,18 @@
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <<<<<<< HEAD <a class="btn btn-primary" href="login.html">Logout</a>
-            =======
-            <a class="btn btn-primary" href="/login/logout">Logout</a>
-            >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+<<<<<<< HEAD
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+
+=======
+
+          <a class="btn btn-primary" href="/login/logout">Logout</a>
+           
+            
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
         </div>
       </div>
     </div>

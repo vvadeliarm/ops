@@ -17,11 +17,20 @@ class KepalaBaakModel extends Model
     protected $allowedFields = ['ttd', 'cap'];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'tanggalditambahkan';
+    protected $createdField  = 'tanggalpembuatan';
+    // protected $createdField  = 'tanggalditambahkan';
     protected $updatedField  = 'tanggalacckbaak';
     // protected $deletedField  = 'deleted_at';
 
     #protected $validationRules    = [];
     #protected $validationMessages = [];
     #protected $skipValidation     = false;
+
+    // function cari($keyword)
+    // {
+    //     // dd($this->pengajuanModel->table('pengajuan'));
+    //     $builder = $this->db->query("SELECT * FROM pengajuan WHERE nama Like '%$keyword%'")->getResult();
+    //     // $builder->like('nama', $keyword);
+    //     return $builder;
+    // }
 }

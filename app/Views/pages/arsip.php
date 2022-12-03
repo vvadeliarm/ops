@@ -181,7 +181,11 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<<<<<<< HEAD
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $staff['nama']; ?></span>
+=======
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $sta['nama']; ?></span>
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                 <img class="img-profile rounded-circle" src="/img/undraw_profile.svg">
               </a>
               <!-- Dropdown - User Information -->

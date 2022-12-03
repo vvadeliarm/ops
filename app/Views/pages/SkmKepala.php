@@ -75,7 +75,7 @@
                         <div class="input-group">
                             <input type="text" name="keyword" value="<?= $keyword ?>" class="form-control bg-light border-0 small" placeholder="Cari NIM/Nama Mahasiswa..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
+                                <button class="btn btn-primary" type="submit" name="submit">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
                             </div>
@@ -210,21 +210,44 @@
 
                             <br>
                             <div class="dropdown">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                                <div class="d-grid gap-
+                                2 d-md-flex justify-content-md-end">
+=======
+<<<<<<< HEAD
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                                 <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.."> -->
+=======
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+>>>>>>> 1fe74d4e0eba607d2f21a006b8b32622d9c884c0
+                                    <!-- <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
+                                        <span class="caret"></span></button> -->
+                                    <!-- <ul class="dropdown-menu">
+                                        //<input class="form-control" id="myInput" type="text" placeholder="Search..">
+>>>>>>> eb94447c862f8375fb27419a7802a103fe729967
                                         <li><a href="#">Semua</a></li>
                                         <li><a href="#">Diajukan</a></li>
                                         <li><a href="#">Proses</a></li>
                                         <li><a href="#">Disetujui</a></li>
                                         <li><a href="#">Ditolak</a></li>
 
+<<<<<<< HEAD
                                     </ul>
                                     <select id="statusskm">
                                         <!-- <option value="">Pilih Status SKM</option> -->
                                         <option value="Semua">Semua</option>
+=======
+                                    </ul> -->
+                                    <select id="statusskm">
+                                        <option value="">Pilih Status SKM</option>
+                                        <!-- <option value="Semua">Semua</option> -->
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
                                         <option value="Disetujui">Disetujui</option>
                                         <option value="Ditolak">Ditolak</option>
                                         <option value="Proses">Proses</option>
@@ -244,7 +267,6 @@
                 <th scope=" col">Dokumen</th>
                                 <th scope="col">Tanggal dibuat</th>
                                 <th scope="col">Nama Mahasiswa</th>
-                                <th scope="col">NIM</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Detail</th>
                                 </tr>
@@ -257,14 +279,13 @@
                                             <td scope="row">SKM<?= sprintf("%03d", $p['idpengajuan']); ?></td>
                                             <td><?= $p['tanggalpengajuan']; ?></td>
                                             <td><?= $p['nama']; ?></td>
-                                            <td><?= $p['nim']; ?></td>
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
                                                 <td><a href="/HomeKepalaBaakTabel/detailSetuju/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
-                                            <?php } elseif ($p['statusskm'] == "Diteruskan") { ?>
+                                            <?php } elseif ($p['statusskm'] == "Ditangguhkan") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-warning">Proses</button></a></td>
                                             <?php } else { ?>
                                                 <td></td>

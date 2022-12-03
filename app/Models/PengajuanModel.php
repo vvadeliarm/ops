@@ -31,6 +31,24 @@ class PengajuanModel extends Model
     #protected $validationRules    = [];
     #protected $validationMessages = [];
     #protected $skipValidation     = false;
+<<<<<<< HEAD
+=======
+
+    // public function __construct()
+    // {
+    //     $this->pengajuanModel = new PengajuanModel();
+    //     // $this->mahasiswaModel = new MahasiswaModel();
+    //     // $this->suratModel = new SuratModel();
+    // }
+
+    // function cari($keyword)
+    // {
+    //     // dd($this->pengajuanModel->table('pengajuan'));
+    //     $builder = $this->db->query("SELECT * FROM pengajuan WHERE nama Like '%$keyword%'")->getResult();
+    //     // $builder->like('nama', $keyword);
+    //     return $builder;
+
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
     function cari($keyword)
     {
         // dd($this->pengajuanModel->table('pengajuan'));
@@ -38,4 +56,17 @@ class PengajuanModel extends Model
         // dd($builder);
         return $builder;
     }
+<<<<<<< HEAD
+=======
+
+    function filter()
+    {
+        $katakunci = 'Disetujui';
+        // dd($this->pengajuanModel->table('pengajuan'));
+        // $builder = $db->table('pengajuan')->select('statusskm');
+        $builder = $this->db->query("SELECT * FROM pengajuan GROUP BY statusskm")->getResultArray();
+
+        return $builder;
+    }
+>>>>>>> 3f766bba3446c6a790f3e05f2b938b59feed3759
 }
