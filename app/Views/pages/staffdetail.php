@@ -44,62 +44,7 @@
                                 </svg>
                     </section>
                     <!-- Akhir Slider-->
-
-                    <?php if ($pengajuanDetail['statusskm'] == "Disetujui") { ?>
-                        <button type="hidden" class="but" data-toggle="modal" data-target="#disetujuiModal"></button>
-                        <!-- Modal Disetujui -->
-                        <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                                        <h5 class="modal-title">Detail SKM</h5>
-                                        <!-- <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">X</button> -->
-                                        <a href="/HomeStaffBaakTabel/layananSkm"><button class="btn btn-primary" type="button" style="background-color: red;">X</button></a>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="row g-3">
-                                            <div class="col-md-12">
-                                                <label for="idDokumen" class="form-label">Dokumen</label>
-                                                <input class="form-control" type="text" placeholder="Dokumen_<?= sprintf("%03d", $pengajuanDetail['idpengajuan']); ?>" aria-label="Disabled input example" disabled>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
-                                                <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled>
-                                            </div>
-                                            <!-- <div class="col-md-12">
-                                <label for="formFile" class="form-label">File SKM</label>
-                                <br>
-                                <?php if ($pengajuanDetail['kategori'] == "Perpanjangan BPJS") { ?>
-                                    <input class="form-control" type="text" placeholder="Tidak Ada Dokumen Yang Diupload" aria-label="Disabled input example" disabled>
-                                <?php } else { ?>
-                                <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed>
-                            <a href="/Previewpdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
-                                <i class="fas fa-fw fa-file"></i>
-                                <span><?= $surat['nama surat']; ?></span>
-                                <i class="fas fa-fw fa-eye"></i>
-                            </a>
-                        <?php } ?>
-                    </div> -->
-
-                                            <div class="col-md-12">
-                                                <label for="formFile" class="form-label">File SKM</label>
-                                                <br>
-                                                <a href="/Previewpdf/previewpdfSkm/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
-                                                    <i class="fas fa-fw fa-file"></i>
-                                                    <span><?= $surat['nama surat']; ?></span>
-                                                    <i class="fas fa-fw fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-
-                                        <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+                    <?php if ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
                         <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
                     <?php } elseif (($pengajuanDetail['statusskm'] == "Diajukan") || ($pengajuanDetail['statusskm'] == "Diajukan Kembali")) { ?>
                         <button type="hidden" class="but" data-toggle="modal" data-target="#prosesModal"></button>
@@ -242,6 +187,8 @@
                             <div class="col-12">
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
+                            </div>
+                            <div class="modal-footer">
                                 <button class="btn btn-primary" type="submit" style="background-color: green;">Teruskan SKM</button>
                             </div>
                         </form>
@@ -263,12 +210,18 @@
                     <div class="modal-body" style=" color: black; ">
 
                         <form form action="/CRUDPengajuan/tangguhkanPengajuanStaff/<?= $pengajuanDetail['idpengajuan']; ?>">
+                            <div class="form-group">
+                                <!-- <label>Receiver Email</label> -->
+                                <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                            </div>
                             <div class="col-12">
                                 Alasan :
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
-                                <div><button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button></div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit" style="background-color: grey;">Tangguhkan SKM</button>
+                                </div>
 
                             </div>
                         </form>
@@ -287,14 +240,22 @@
                     </div>
                     <div class="modal-body" style=" color: black; ">
                         <form form action="/CRUDPengajuan/tolakPengajuanStaff/<?= $pengajuanDetail['idpengajuan']; ?>">
+                            <div class="form-group">
+                                <!-- <label>Receiver Email</label> -->
+                                <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                            </div>
                             <div class="col-12">
                                 Alasan :
                                 <textarea class="form-control" rows="5" name="alasan" required></textarea>
                                 <input class="form-control" type="hidden" name="nipoperator" value="<?= $staff['nip']; ?>" aria-label="readonly input example" readonly>
                                 <input class="form-control" type="hidden" name="namaoperator" value="<?= $staff['nama']; ?>" aria-label="readonly input example" readonly>
-                                <div><button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button></div>
 
                             </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak SKM</button>
+                            </div>
+
+
                         </form>
 
 

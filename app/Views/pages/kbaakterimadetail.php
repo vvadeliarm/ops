@@ -89,6 +89,10 @@
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $kbaakDetail['nama']; ?>" name="namakbaak" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $kbaakDetail['nip']; ?>" name="nipkbaak" aria-label="readreadonly input example" readonly>
+                        <div class="form-group">
+                            <!-- <label>Receiver Email</label> -->
+                            <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                        </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit" style="background-color: green;">Terima</button>
 

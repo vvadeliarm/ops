@@ -40,6 +40,8 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 $routes->get('/PengajuanTabel/(:segment)', 'PengajuanTabel::detail/$1');
+$routes->get('/HomeKepalaBaakTabel/detailSetuju/(:segment)', 'HomeKepalaBaakTabel::detailSetuju/$1');
+$routes->get('/HomeStaffBaakTabel/detailSetuju/(:segment)', 'HomeStaffBaakTabel::detailSetuju/$1');
 $routes->get('/KepalaBaakTabel/(:segment)', 'KepalaBaakTabel::detail/$1');
 $routes->get('/KepalaBaakTabel/timestamp/(:segment)', 'KepalaBaakTabel::timestamp/$1');
 $routes->get('/KepalaBaakTabel/timestamp2/(:segment)', 'KepalaBaakTabel::timestamp2/$1');
@@ -63,6 +65,9 @@ $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/
 $routes->get('/HomeStaffBaakTabel/pages/login', 'Pages::login');
 $routes->get('/Previewpdf/PreviewpdfSkm/(:segment)', 'Previewpdf::Previewpdfskm/$1');
 $routes->get('/export-pdf/(:segment)', 'PengajuanTabel::exportPDF/$1');
+$routes->get('/view-pdf/(:segment)', 'PengajuanTabel::viewPDF/$1');
+
+setlocale(LC_TIME, "IND");
 /*
  * --------------------------------------------------------------------
  * --------------------------------------------------------------------

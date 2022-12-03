@@ -373,6 +373,22 @@ class CRUDPengajuan extends BaseController
 
     public function tangguhkanPengajuanStaff($idpengajuan)
     {
+        $to = $this->request->getVar('mailTo');
+        $subject = "SKM Ditangguhkan";
+        $message = "Pengajuan Anda Masih Ditangguhkan Oleh BAAK. Silahkan Kunjungi Web Untuk Memperbaiki Pengajuan";
+
+        $email = \Config\Services::email();
+        $email->setTo($to);
+        $email->setFrom('Anonymous@gmail.com', 'Pengajuan SKM');
+
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        if ($email->send()) {
+            echo 'Email successfully sent';
+        } else {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
         // dd($this->request->getVar('file'));
         // dd($this->request->getVar('nipoperator'));
         $session = session();
@@ -433,6 +449,22 @@ class CRUDPengajuan extends BaseController
 
     public function tolakPengajuanStaff($idpengajuan)
     {
+        $to = $this->request->getVar('mailTo');
+        $subject = "SKM Ditolak";
+        $message = "Maaf Pengajuan Anda Telah Ditolak Oleh BAAK. Kunjungi Halaman Web Untuk Melihat Alasan Penolakan";
+
+        $email = \Config\Services::email();
+        $email->setTo($to);
+        $email->setFrom('Anonymous@gmail.com', 'Pengajuan SKM');
+
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        if ($email->send()) {
+            echo 'Email successfully sent';
+        } else {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
         // dd($this->request->getVar('file'));
         // dd($this->request->getVar('nipoperator'));
         $session = session();

@@ -82,9 +82,9 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div class="modal-footer">
-                                        <a href="/Previewpdf/download/<?= $surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
-                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <a href="/Previewpdf/download/<$surat['fileSurat']; ?>" target="_blank" rel="nofollow"><button type="button" class="btn btn-primary">Cetak</button>
+                                    </div> -->
 
                                 </div>
                             </div>

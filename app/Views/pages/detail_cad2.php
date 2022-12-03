@@ -38,9 +38,7 @@
                             </svg>
                 </section>
                 <!-- Akhir Slider-->
-                <?php if ($pengajuanDetail['statusskm'] == "Disetujui") { ?>
-                    <button type="hidden" class="but" data-toggle="modal" data-target="#disetujuiModal"></button>
-                <?php } elseif ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
+                <?php if ($pengajuanDetail['statusskm'] == "Ditolak") { ?>
                     <button type="hidden" class="but" data-toggle="modal" data-target="#ditolakModal"></button>
                 <?php } elseif ($pengajuanDetail['statusskm'] == "Ditangguhkan") { ?>
                     <button type="hidden" class="but" data-toggle="modal" data-target="#ditangguhkanModal"></button>
@@ -62,44 +60,13 @@
         <!-- End of Content Wrapper -->
     </div>
     <!-- End of Page Wrapper -->
-
-    <!-- Modal Disetujui -->
-    <div class="modal fade" id="disetujuiModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #2E179D; color: White; ">
-                    <h5 class="modal-title">Detail SKM</h5>
-                    <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
-                </div>
-                <div class="modal-body">
-                    <form class="row g-3">
-                        <div class="col-md-12">
-                            <label for="idDokumen" class="form-label">Dokumen</label>
-                            <input class="form-control" type="text" placeholder="Dokumen_<?= sprintf("%03d", $pengajuanDetail['idpengajuan']); ?>" aria-label="Disabled input example" disabled>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="namaMhsw" class="form-label">Nama Mahasiswa</label>
-                            <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled>
-                        </div>
-                        <!-- <embed type="application/pdf" src="/filePendukung/<?= $pengajuanDetail['namafile']; ?>" width="600" height="400"></embed> -->
-                        <div class="col-md-12">
-                            <label for="namaMhsw" class="form-label">File SKM</label>
-                            <!-- <input class="form-control" type="text" placeholder="<?= $pengajuanDetail['nama']; ?>" aria-label="Disabled input example" disabled> -->
-                            <div>
-                                <a href="/view-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" target="_blank" rel="nofollow" title="dewa inside blog">
-                                    <i class="fas fa-fw fa-file"></i>
-                                    <span><?= $pengajuanDetail['namafile']; ?></span>
-                                    <i class="fas fa-fw fa-eye"></i>
-                                </a>
-                            </div>
-                            <div class="modal-footer">
-                                <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-primary">Export PDF</a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="modal-footer">
+        <!-- <button href="/export-pdf" class="btn btn-primary">Export PDF</button> -->
+        <button type="button" class="btn btn-primary">Cetak</button>
+        <!-- <a href="/export-pdf" class="btn btn-warning">Export PDF</a> -->
+    </div>
+    </div>
+    </div>
     </div>
 
     <!-- Modal Ditolak -->
@@ -111,7 +78,7 @@
                     <a href="/PengajuanTabel"><button class="btn btn-primary" type="button" style="background-color: red">X</button></a>
                     <!-- <a class="nav-link" href="/PengajuanTabel"><button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close">X</button></a> -->
                 </div>
-                <div class="modal-body" style="margin-left: 3%;">
+                <div class="modal-body">
                     <form class="row g-3">
                         <div class="col-md-12">
                             <label for="idDokumen" class="form-label">Dokumen</label>
@@ -146,15 +113,14 @@
                         <div class="col-md-12">
                             <label for="alasan" class="form-label">Alasan</label>
                             <textarea class="form-control" id="alasan" rows="3" placeholder="<?= $pengajuanDetail['alasan']; ?>" aria-label="Disabled input example" disabled></textarea>
+                            <a target="_blank" href="/export-pdf/<?= $pengajuanDetail['idpengajuan']; ?>" class="btn btn-warning">Export PDF</a>
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
-
-
-
 
     <!-- Modal Ditangguhkan -->
     <div class="modal fade" id="ditangguhkanModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

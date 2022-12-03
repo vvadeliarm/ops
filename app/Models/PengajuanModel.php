@@ -31,4 +31,11 @@ class PengajuanModel extends Model
     #protected $validationRules    = [];
     #protected $validationMessages = [];
     #protected $skipValidation     = false;
+    function cari($keyword)
+    {
+        // dd($this->pengajuanModel->table('pengajuan'));
+        $builder = $this->db->query("SELECT * FROM pengajuan WHERE nama Like '%$keyword%' OR nim Like '%$keyword%'")->getResultArray();
+        // dd($builder);
+        return $builder;
+    }
 }

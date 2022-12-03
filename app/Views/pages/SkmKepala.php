@@ -71,9 +71,9 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search" action="" method="get" autocomplete="off">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" name="keyword" value="<?= $keyword ?>" class="form-control bg-light border-0 small" placeholder="Cari NIM/Nama Mahasiswa..." aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -201,13 +201,16 @@
                     <div class="container" style="background-color:white; color: black ;">
                         <div class="row text-center mb-5">
                             <div class="col">
+                                <p>
                                 <h3>Daftar SKM </h3>
+                                </p>
+
 
                             </div>
 
                             <br>
                             <div class="dropdown">
-                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                                     <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                                         <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
@@ -219,6 +222,16 @@
                                         <li><a href="#">Ditolak</a></li>
 
                                     </ul>
+                                    <select id="statusskm">
+                                        <!-- <option value="">Pilih Status SKM</option> -->
+                                        <option value="Semua">Semua</option>
+                                        <option value="Disetujui">Disetujui</option>
+                                        <option value="Ditolak">Ditolak</option>
+                                        <option value="Proses">Proses</option>
+                                        <option value="Ditangguhkan">Ditangguhkan</option>
+                                        <option value="Diajukan kembali">Diajukan kembali</option>
+                                    </select>
+
                                 </div>
                             </div>
 
@@ -248,7 +261,7 @@
                                             <td><?= $p['statusskm']; ?></td>
                                             <?php
                                             if ($p['statusskm'] == "Disetujui") { ?>
-                                                <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
+                                                <td><a href="/HomeKepalaBaakTabel/detailSetuju/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success" data-toggle="modal" data-target="#disetujuiModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                                                 <td><a href="/KepalaBaakTabel/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger" data-toggle="modal" data-target="#ditolakModal">Lihat</button></a></td>
                                             <?php } elseif ($p['statusskm'] == "Diteruskan") { ?>
@@ -539,6 +552,29 @@
 
         <!-- Custom scripts for all pages-->
         <script src="/js/sb-admin-2.min.js"></script>
+
+        <!-- Filtering -->
+        <script type="text/javascript">
+            table = $('#pengajuan').DataTable({
+                "order": [],
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "<?php echo site_url('Datatables/table_data'); ?>",
+                    "type": "POST",
+                    "data": function(data) {
+                        data.statusskm = $('statusskm').val();
+                    }
+                },
+                "columnDefs": [{
+                    "targets": [0],
+                    "orderable": false
+                }]
+            });
+            $('statusskm').change(function() {
+                table.draw();
+            });
+        </script>
 
 </body>
 

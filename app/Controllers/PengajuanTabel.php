@@ -29,7 +29,7 @@ class PengajuanTabel extends BaseController
         $session = session();
         // echo "Welcome back, ".$session->get('nama');
         $nim = $session->get('nim');
-        
+
         if ($nim != NULL) {
             // $pengajuan = $this->pengajuanModel->findAll();
             $pengajuan = $this->pengajuanModel->where(['nim' => $nim])->findAll();
@@ -112,17 +112,58 @@ class PengajuanTabel extends BaseController
             'pengajuanDetail' => $pengajuanDetail,
             'surat' => $surat
         ];
-     
-       
+
+
         // reference the Dompdf namespace
-        
+
         $options = new Options;
         $options->set('chroot', realpath(''));
         $options->setIsRemoteEnabled(true);
-        
+
         $options->isHtml5ParserEnabled(true);
         $view = view('pages/surat', $data);
-        
+
+        // instantiate and use the dompdf class
+
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($view);
+        // $dompdf->setBasePath();
+        // $dompdf->set_option('IsRemoteEnabled',TRUE);
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'potrait');
+        $canvas = $dompdf->get_canvas();
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        dd($dompdf->stream());
+        // $dompdf->stream("surat-skm", array("Attachment" => false));
+        // return view('pages/surat', $data);
+    }
+
+    public function viewPDF($idpengajuan)
+    {
+        // require 'autoload.php';
+        // session();
+        // // $session = session();
+        // // $nim = $session->get('nim');
+        $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
+        $surat = $this->suratModel->where(['idpengajuan' => $idpengajuan])->first();
+        $data = [
+            'pengajuanDetail' => $pengajuanDetail,
+            'surat' => $surat
+        ];
+
+
+        // reference the Dompdf namespace
+
+        $options = new Options;
+        $options->set('chroot', realpath(''));
+        $options->setIsRemoteEnabled(true);
+
+        $options->isHtml5ParserEnabled(true);
+        $view = view('pages/surat', $data);
+
         // instantiate and use the dompdf class
 
         $dompdf = new Dompdf();
@@ -137,7 +178,7 @@ class PengajuanTabel extends BaseController
 
         // Output the generated PDF to Browser
         // dd($dompdf->stream());
-        $dompdf->stream("surat-skm", array("Attachment"=>false));
+        $dompdf->stream("surat-skm", array("Attachment" => false));
         // return view('pages/surat', $data);
     }
 }

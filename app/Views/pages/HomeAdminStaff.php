@@ -46,14 +46,21 @@
           <span>Home</span></a>
       </li>
 
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
+        <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Layanan SKM</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="SkmAdminStaff.html" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <a class="nav-link" href="/HomeStaffBaakTabel/layananSkm">
             <i class="fas fa-fw fa-folder"></i>
             <span>Layanan SKM</span>
           </a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Dashboard Input Data Kepala -->
       <li class="nav-item">
@@ -222,10 +229,8 @@
             <div class="col-lg-6">
               <div class="card shadow mb-4" style="background-color: #151965">
                 <div class="card-body">
-                  <<<<<<< HEAD <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
-                  =======
-                  <img src="images/STIS.jpg" class="img-fluid" alt="Responsive image" />
-                  >>>>>>> 852804a217e3a279326e562aeb35e16f50e518ba
+                  <img src="/images/STIS.jpg" class="img-fluid" alt="Responsive image" />
+
                 </div>
               </div>
             </div>

@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\FormModel;
+use CodeIgniter\Controller;
+
 use App\Models\PengajuanModel;
 use App\Models\KepalaBaakModel;
 use CodeIgniter\Exceptions\AlertError;
@@ -89,6 +92,22 @@ class CRUDStatus extends BaseController
 
     public function tolakStatusSkm($idpengajuan)
     {
+        $to = $this->request->getVar('mailTo');
+        $subject = "SKM Ditolak";
+        $message = "Maaf Pengajuan Anda Telah Ditolak Oleh BAAK. Kunjungi Halaman Web Untuk Melihat Alasan Penolakan";
+
+        $email = \Config\Services::email();
+        $email->setTo($to);
+        $email->setFrom('Anonymous@gmail.com', 'Pengajuan SKM');
+
+        $email->setSubject($subject);
+        $email->setMessage($message);
+        if ($email->send()) {
+            echo 'Email successfully sent';
+        } else {
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
         $session = session();
         $nip = $session->get('nip');
         $pengajuanDetail = $this->pengajuanModel->where(['idpengajuan' => $idpengajuan])->first();
@@ -119,7 +138,8 @@ class CRUDStatus extends BaseController
                 'namafile' => $namaFile,
                 'namakbaak' => $namaKbaak,
                 'nipkbaak' => $nip,
-                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak'],
+                'alasan' => $this->request->getVar('alasan')
 
             ]);
         } else {
@@ -142,7 +162,8 @@ class CRUDStatus extends BaseController
                 'tujuan' => $pengajuanDetail['tujuan'],
                 'namakbaak' => $namaKbaak,
                 'nipkbaak' => $nip,
-                'tanggalacckbaak' => $kbaak['tanggalacckbaak']
+                'tanggalacckbaak' => $kbaak['tanggalacckbaak'],
+                'alasan' => $this->request->getVar('alasan')
             ]);
         }
 

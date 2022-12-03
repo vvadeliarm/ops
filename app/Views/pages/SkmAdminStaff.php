@@ -210,13 +210,17 @@
           <div class="container" style="background-color:white; color: black ;">
             <div class="row text-center mb-5">
               <div class="col">
+                <p>
                 <h3>Daftar SKM </h3>
+                </p>
+
 
               </div>
 
               <br>
+
               <div class="dropdown">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-top: 10%;">
                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter
                     <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -255,7 +259,7 @@
                       <td><?= $p['statusskm']; ?></td>
                       <?php
                       if ($p['statusskm'] == "Disetujui") { ?>
-                        <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success">Lihat</button></a></td>
+                        <td><a href="/HomeStaffBaakTabel/detailSetuju/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-success">Lihat</button></a></td>
                       <?php } elseif ($p['statusskm'] == "Ditolak") { ?>
                         <td><a href="/HomeStaffBaakTabel/detail/<?= $p['idpengajuan']; ?>"><button type=" button" class="btn btn-danger">Lihat</button></a></td>
                       <?php } elseif (($p['statusskm'] == "Diajukan Kembali") || ($p['statusskm'] == "Diajukan")) { ?>

@@ -64,7 +64,7 @@
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #2E179D; color: White; ">
                     <h5 class="modal-title">PENOLAKAN SKM</h5>
-                    <a href="/KepalaBaakTabel/timestamp2/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">X</button></a>
+                    <a href="/KepalaBaakTabel/<?= $pengajuanDetail['idpengajuan']; ?>"><button class="btn btn-primary" type="button">X</button></a>
                 </div>
                 <!-- <div class="modal-body" style=" color: black; ">
                     <form form action="/CRUDAlasan/insertAlasan/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" enctype="multipart/form-data" class="row g-3">
@@ -76,7 +76,8 @@
 
 
                 </div> -->
-                <div class="modal-footer">
+                <!-- <div> -->
+                <div class="modal-body" style="margin-left: 5%;margin-right:5%;">
                     <form form action="/CRUDStatus/tolakStatusSkm/<?= $pengajuanDetail['idpengajuan']; ?>" method="POST" class="row g-3">
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nama']; ?>" name="nama" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['nim']; ?>" name="nim" aria-label="readreadonly input example" readonly>
@@ -91,15 +92,21 @@
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['fileupload']; ?>" name="fileupload" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['namafile']; ?>" name="namafile" aria-label="readreadonly input example" readonly>
                         <input class="form-control" type="hidden" value="<?= $pengajuanDetail['semester']; ?>" name="semester" aria-label="readreadonly input example" readonly>
+                        <div class="form-group">
+                            <!-- <label>Receiver Email</label> -->
+                            <input type="hidden" name="mailTo" value="<?= $pengajuanDetail['nim']; ?>@stis.ac.id" class="form-control">
+                        </div>
                         Alasan :
                         <textarea class="form-control" rows="5" name="alasan" required></textarea>
-
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak</button>
-
-                        </div>
-                    </form>
+                        
                 </div>
+                <!-- <div class="col-12"> -->
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit" style="background-color: red;">Tolak</button>
+
+                </div>
+                </form>
+
             </div>
         </div>
     </div>
